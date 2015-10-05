@@ -1,0 +1,254 @@
+
+    <div class="container">
+        
+        <div class="row margin-bottom10">
+            <div class="col-lg-12">
+                <h3>Bleed Location</h3>
+            </div>
+            <div class="clearfix"></div>
+            
+        </div>
+        
+       
+        <div class="row margin-bottom10">
+            <div class="col-lg-8">
+               <label class="control-label"></label>
+               <div class="clearfix"></div>
+               <button ng-click="status.open = !status.open" type="button" class="btn btn-success add-activity"><i class="fa fa-plus margin-right5"></i>Add New</button>
+            </div>
+            
+            
+            <div class="col-lg-2">
+                <label class="control-label">Search by keywords:</label>
+                <div class="clearfix"></div>
+                <input type="text" class="form-control search-width-125" placeholder="Search and Filter">    
+  
+                 
+            </div>
+            
+            <div class="col-lg-2">
+                <div class="form-group">
+                        <label class="control-label"></label>
+                        <div class="clearfix"></div>
+                        <div class="search-btns margin-top5 pull-right">
+                        <button type="button" class="btn btn-primary margin-right5">Search</button>
+                        <button type="button" class="btn btn-default">Reset</button>
+                        </div>
+                  </div>
+                 
+            </div>
+        </div>
+        
+        <div class="clearfix"></div>
+        
+        <div class="row">
+         <div class="col-md-12">      
+           <table class="table table-bordered table-striped">
+            <thead>
+                  <tr>
+                   
+                    <th class="text-center"></th>
+                    <th class="text-center">Bleed Location<span class="fa fa-caret-up pull-right cursor-pointer"></span> <span class="pull-right cursor-pointer fa fa-caret-down table-sort-down"></span></th>
+                    
+                    <th class="text-center">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    
+                    <td class="text-center">0001</td>
+                    <td class="text-center">Under arm</td>
+                    <td class="text-center">
+                        <button type="button" class="btn btn-primary action-btn"><span class="fa fa-edit"> </span>Edit</button>
+                       
+                        <button type="button" class="btn btn-danger action-btn"><span class="fa fa-close"> </span>Delete</button>
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    
+                    <td class="text-center">0002</td>
+                    <td class="text-center">Right Thigh</td>
+                    <td class="text-center">
+                        <button type="button" class="btn btn-primary action-btn"><span class="fa fa-edit"> </span>Edit</button>
+                       
+                        <button type="button" class="btn btn-danger action-btn"><span class="fa fa-close"> </span>Delete</button>
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    
+                    <td class="text-center">0003</td>
+                    <td class="text-center">Left Thigh</td>
+                    <td class="text-center">
+                        <button type="button" class="btn btn-primary action-btn"><span class="fa fa-edit"> </span>Edit</button>
+                       
+                        <button type="button" class="btn btn-danger action-btn"><span class="fa fa-close"> </span>Delete</button>
+                    </td>
+                  </tr>
+               
+                
+                 
+                </tbody>
+              </table>
+            </div>      
+          </div>
+          
+
+<accordion>
+    
+    <accordion-group is-open="status.open">
+        <accordion-heading>
+            Add Bleed Location<i class="pull-right fa" ng-class="{'fa-chevron-down': status.open, 'fa-chevron-up': !status.open}"></i>
+        </accordion-heading>
+        
+            <form class="form-horizontal" role="form" id="patient_registration">
+            
+            <div class="col-lg-6">
+               
+                  
+                  <div class="form-group">
+                    <label class="control-label required-label col-sm-4" for="fname">Bleed Location:<span class='fa fa-asterisk required-star'></span></label>
+                    <div class="col-sm-8"> 
+                      <input type="text" class="form-control" />
+                    </div>
+                  </div>
+                    
+                
+            </div>
+
+            <div class="col-md-6">
+               
+                  
+            </div>
+            
+            <div class="clearfix"></div>
+          
+           
+            
+             <div class="col-sm-12">
+        
+                <div class="form-group">
+                   
+                     <div class="col-sm-8 col-sm-offset-2">
+                      <button type="submit" class="btn btn-primary">Add</button>
+                      <button type="submit" class="btn btn-default">Reset</button>
+                     </div>
+                 <div class="clearfix"></div>
+               </div>
+
+                <div class="clearfix"></div>
+
+            </div> 
+        
+            
+      
+       
+            
+       </form> 
+        
+        
+    </accordion-group>
+  </accordion>     
+
+
+        
+   
+            
+          
+            <!-- Blog Post Content Column -->
+             
+      
+               
+               
+     
+        
+        
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; xcendant 2015</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+
+     
+
+    <script src="js/bootstrap-datetimepicker.js"></script> 
+    <script src="js/bootstrap-datepicker.js"></script> 
+    
+    <script src="js/bootstrap-switch.min.js"></script> 
+   
+    
+     <script src="js/script.js"></script> 
+    
+    <script type="application/javascript">
+        
+        $('#collapsetwo').collapse('hide');
+        
+         var targetDate =  $('.targetDate');
+
+        if(targetDate){
+
+            $('.targetDate').datepicker({
+                autoclose: true,
+                format: 'yyyy-mm-dd'
+            });
+
+        }
+        
+        
+        $('.form_datetime').datetimepicker({
+            //language:  'fr',
+            weekStart: 1,
+            todayBtn:  1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            forceParse: 0,
+            showMeridian: 1
+        });
+
+$('input[name="my-checkbox4"]').on('switchChange.bootstrapSwitch', function(event, state) {
+    
+    if(state == true ) {
+        $('#ifhospitalyes').css('display','block');
+        
+    }else{
+        $('#ifhospitalyes').css('display','none');
+    }
+    
+    
+});
+        
+function toggleChevron(e) {
+$(e.target)
+    .prev('.panel-heading')
+    .find("i.indicator")
+    .toggleClass('fa-chevron-down fa-chevron-up');
+}
+$('#accordion').on('hidden.bs.collapse', toggleChevron);
+$('#accordion').on('shown.bs.collapse', toggleChevron);
+        
+ $(document).on('click', '.add-activity', function(){
+
+           $('#collapsetwo').collapse('show');
+           $("body, html").animate({ 
+                    scrollTop: $( $(this).attr('href') ).offset().top -140
+                }, 500);     
+ 
+            });        
+           
+     
+</script>
+

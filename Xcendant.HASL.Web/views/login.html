@@ -1,0 +1,101 @@
+
+<div class="container" >
+    <div class="row">
+        <!-- Blog Post Content Column -->
+        <div class="col-lg-8">
+
+            <img class="img-responsive" src="img/header-img.png" alt="">
+            <hr>
+            <!-- Post Content -->
+            <p class="lead">Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
+
+
+        </div>
+        <!-- Blog Sidebar Widgets Column -->
+        <div class="col-md-4">
+            <!-- Blog Search Well -->
+            <div class="well login">
+                <h3>Login</h3>
+
+                    <form name="loginForm"  ng-controller="authCtrl" required>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address<span class='fa fa-asterisk required-star'></span></label>
+                        <input type="email" name="email" class="form-control required-input" id="exampleInputEmail1" placeholder="Email"  ng-model="localLoginData.userName" required  />
+                        <div ng-messages="loginForm.email.$error"  ng-if="loginForm.email.$touched">
+                            <p class="validation-text" ng-message="required" >Your name is required.</p>
+                            <p class="validation-text" ng-message="email">This needs to be a valid email</p>
+                        </div>
+                      </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password<span class='fa fa-asterisk required-star'></span></label>
+                        <input type="password" name="password" class="form-control required-input" id="exampleInputPassword1" placeholder="Password"  ng-model="localLoginData.password" required>
+                        <div ng-messages="loginForm.password.$error" ng-if="loginForm.password.$touched">
+                            <p class="validation-text" ng-message="required">Your password is required.</p>
+
+                        </div>
+                      </div>
+
+                      
+                    <div ng-controller="ModalDemoCtrl">
+                        <script type="text/ng-template" id="myModalContent.html">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Request for New Password</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Enter email">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" type="button" ng-click="ok()">Send</button>
+                                <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+                            </div>
+                        </script>
+                        <a href="" class="signup-link" ng-click="open()">Fogot Password ? </a>
+
+
+                    </div>
+
+
+
+                      <button class="btn btn-primary" ng-disabled="loginForm.email.$dirty && loginForm.email.$invalid ||  
+loginForm.password.$dirty && loginForm.password.$invalid" ng-click="localSignIn(localLoginData)">Sign in</button>
+                </form>
+
+                <div class="clearfix"></div>
+
+                <div class="social-media-login-section">
+                    <h4>Sign in Social media</h4>
+                    <div class="clearfix"></div>
+                    <a href="#"> <i class="fa fa-facebook-square fa-2 facebook-blue"></i></a>
+                    <a href ng-click="authWithExteranlProvider('Google')"><i class="fa fa-google-plus-square fa-2 google-plus-red"></i></a>
+                    <a href="#"> <i class="fa  fa-twitter-square fa-2 twitter-blue"></i></a>
+
+
+
+                </div>
+
+                <p>Not a member? <a href="/signup" class="signup-link">Signup</a></p>
+
+            </div>
+
+
+        </div>
+    </div>
+    <!-- /.row -->
+
+
+    <hr>
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; xcendant 2015</p>
+            </div>
+        </div>
+        <!-- /.row -->
+    </footer>
+</div>
+<!-- /.container -->

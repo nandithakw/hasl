@@ -1,0 +1,267 @@
+/*!
+ * Start Bootstrap - Blog Post HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    font-family: 'Lato', sans-serif;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+.fa-2{
+    font-size: 35px !important;
+}
+.well h3{
+    margin-top:5px;
+}
+
+.facebook-blue{
+    color: #3B5998;
+}
+
+.google-plus-red{
+    color: #d34836;
+}
+
+.twitter-blue{
+    color: #00aced;
+}
+
+.social-media-login-section{
+    margin-bottom: 10px;
+}
+ 
+.social-media-login-section i{
+    margin-right: 10px;   
+}
+.signup-link{
+    text-decoration: underline;   
+}
+.padding-r-0{
+    padding-right: 0px;   
+}
+.padding-l-0{
+    padding-left: 0px;   
+}
+.social-media-login-section h5{
+    display: inline;   
+}
+.social-media-login-section h4{
+    font-size: 16px  
+}
+
+.signuppage .social-media-login-section i{
+     vertical-align: middle;
+}
+.signuppage .social-media-login-section .facebook-blue{
+    margin-left: 10px;
+}
+.modal-dialog{
+    width: 400px;
+}
+
+.login h3{
+    font-weight: bold;   
+}
+
+.landing-page img {
+    display: block;
+    margin: 90px auto 20px;
+}
+
+.profile-details-section img{
+     display: block;
+     margin: 0px auto;
+}
+
+.yellow-btn{
+   background-color: #fbb218;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.yellow-btn:hover,.yellow-btn:active{
+   background-color: #fbbc36;
+    border: 1px solid #000;
+     color: #000;
+
+}
+
+.thumbnail .fa-lg{
+    font-size: 50px;
+}
+
+.register-tiles .thumbnail{
+    padding:36px 4px;
+}
+
+.register-tiles .thumbnail i{
+    margin-bottom: 15px;
+}
+.register-tiles a.thumbnail, .inner-page-sub-menu a.thumbnail
+{
+    border: 1px solid #337ab7;
+    transition: background-color 0.5s ease;
+}
+
+.profile-details-section h3{
+    margin-top: 15px;   
+}
+.alert{
+      margin-bottom:10px; 
+      padding: 8px 15px;
+}
+#patient_registration.form-horizontal .control-label{
+/*     text-align: left;*/
+}
+
+
+.padding-top5{
+     padding-top: 5px;   
+}
+
+.imagePreview2{
+    height: 200px ;
+    width: 200px ;
+    background-position: center center;
+    background-size:contain;
+    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
+.padding-top0{
+     padding-top: 0px !important;   
+}
+
+.required-star{
+  font-size: 9px !important;
+  text-indent: 3px;
+  vertical-align: super;
+  color: #FF6B50;
+}
+
+.required-input{
+      background-color: rgba(71, 193, 168, 0.19);
+}
+.padding-right0{
+    padding-right: 0px;
+}
+.margin-right5{
+     margin-right: 5px;   
+}
+.margin-bottom10{
+    margin-bottom: 10px;
+}
+.margin-bottom20{
+     margin-bottom: 20px;
+}
+.action-btn{
+     padding: 3px 12px;
+     font-size: 13px;
+     margin-right: 5px;
+}
+.action-btn span{
+    margin-right: 5px;
+}
+.table thead {
+         background-color: #2a80b9;
+        color: #fff;
+}
+.table-sort-down {
+  
+    margin-top: 8px;
+    right: -12px;
+    position: relative;
+}
+.margin-top5{
+    margin-top: 5px;
+}
+.padding0{
+    padding: 0px;
+}    
+
+.status-label.pending{
+     color: #f0ad4e;
+}
+.status-label.approved{
+    color: #5cb85c;
+}
+.padding-left0{
+     padding-left: 0px;   
+}
+.search-width-125{
+     width: 125%;   
+}
+.pagination {
+     margin-top: 0px;  
+     
+}
+.cursorpoint{
+     cursor: pointer;
+}
+.margin-top10{
+    margin-top:5px;
+}  
+
+.register-tiles a.thumbnail:hover,.register-tiles a.thumbnail:active,.register-tiles a.thumbnail:focus, .inner-page-sub-menu a.thumbnail:hover, .inner-page-sub-menu a.thumbnai:active,.inner-page-sub-menu a.thumbnai:focus{
+    
+    background-color: #23527c;
+    color: #fff;
+    text-decoration: none;
+    
+    
+}
+.inner-page-sub-menu a.thumbnail.active{
+    background-color: #23527c;
+    color: #fff;
+    text-decoration: none;
+}
+
+.inner-page-sub-menu .thumbnail{
+        width: 150px;
+        min-height: 102px;
+        padding: 15px;
+}
+.inner-page-sub-menu .thumbnail .fa{
+        font-size: 25px; 
+        margin-bottom: 5px;
+}
+.input-group .input-group-addon{
+     cursor: pointer;
+}
+.validation-text{
+      color: #FF0000;
+      font-size: 11px;
+     
+}
+
+.btn-full-width{
+    width: 100%;
+}
+
+/*
+
+input.ng-touched.ng-dirty {
+  border: 1px solid #FF0000;
+}
+input.ng-touched.ng-invalid {
+  border: 1px solid #FF0000;
+}
+*/
+
+/*
+.signupform input.ng-invalid.ng-touched {
+    border: 1px solid #FF0000;
+  }
+
+.signupform input.ng-valid.ng-touched {
+    border: 1px solid #76FF03;
+  }
+*/
+

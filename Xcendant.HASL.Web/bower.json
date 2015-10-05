@@ -1,0 +1,17 @@
+{
+    "name": "Xcendant-HASL",
+    "version": "0.0.0",
+    "dependencies": {
+        "angular": "*",
+        "angular-route": "*",
+        "angular-ui-router": "*",
+        "angular-animate": "*",
+        "angular-messages": "*",
+        "angular-bootstrap": "*",
+        "ngstorage": "*",
+        "angular-mocks": "*",
+        "jquery": "*"
+
+    },
+    "analytics": false
+}
