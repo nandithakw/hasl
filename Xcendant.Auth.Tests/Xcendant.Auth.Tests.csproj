@@ -126,12 +126,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Xcendent.Auth\Xcendant.Auth.csproj">
-      <Project>{2a3c4bfc-982f-45b4-8fb1-51f40810ad9c}</Project>
-      <Name>Xcendant.Auth</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
