@@ -1,5 +1,5 @@
 ﻿using Owin;
-using Xcendent.Auth.Models.DAL;
+using Xcendant.Auth.Models.DAL;
 using System;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
@@ -7,12 +7,12 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Microsoft.Owin.Cors;
-using Xcendent.Auth.Models.Managers;
-using Xcendent.Auth.Providers;
+using Xcendant.Auth.Models.Managers;
+using Xcendant.Auth.Providers;
 using Autofac;
-using Xcendent.Auth.Models.Entities;
+using Xcendant.Auth.Models.Entities;
 
-namespace Xcendent.Auth
+namespace Xcendant.Auth
 {
     public partial class Startup
     {

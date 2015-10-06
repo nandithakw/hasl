@@ -1,4 +1,4 @@
-﻿namespace Xcendent.Auth.Models.DAL
+﻿namespace Xcendant.Auth.Models.DAL
 {
     public class XcendentAuthContext :  AbstractXcendentAuthContext
     {

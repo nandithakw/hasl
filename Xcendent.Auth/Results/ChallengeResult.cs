@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 
-namespace Xcendent.Auth.Results
+namespace Xcendant.Auth.Results
 {
     public class ChallengeResult : IHttpActionResult
     {

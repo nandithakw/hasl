@@ -1,4 +1,4 @@
-﻿namespace Xcendent.Auth.ViewModels
+﻿namespace Xcendant.Auth.ViewModels
 {
     public class UserViewModel
     {

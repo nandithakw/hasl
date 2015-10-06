@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xcendent.Auth.Models.DAL;
+using Xcendant.Auth.Models.DAL;
 
 namespace Xcendant.Auth.Tests.Model.DAL
 {

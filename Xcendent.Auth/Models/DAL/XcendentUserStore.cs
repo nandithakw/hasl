@@ -1,6 +1,6 @@
-﻿using Xcendent.Auth.Models.Entities;
+﻿using Xcendant.Auth.Models.Entities;
 
-namespace Xcendent.Auth.Models.DAL
+namespace Xcendant.Auth.Models.DAL
 {
     public class XcendentUserStore<TUser, TAuthContext> : AbstractXcendentUserStore<TUser, TAuthContext> where TUser : XcendentUser where TAuthContext : AbstractXcendentAuthContext
     {

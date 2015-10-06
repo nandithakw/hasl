@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System.Web.Http;
 
-namespace Xcendent.Auth
+namespace Xcendant.Auth
 {
     public static class WebApiConfig
     {

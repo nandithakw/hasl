@@ -8,10 +8,10 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
-using Xcendent.Auth.Models.DAL;
-using Xcendent.Auth.Models.Entities;
+using Xcendant.Auth.Models.DAL;
+using Xcendant.Auth.Models.Entities;
 
-namespace Xcendent.Auth.Models.Managers
+namespace Xcendant.Auth.Models.Managers
 {
     public class XcendentUserManager : AbstractXcendentUserManager<XcendentUser>
     {

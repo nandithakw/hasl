@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
-using Xcendent.Auth.Models.Entities;
+using Xcendant.Auth.Models.Entities;
 
-namespace Xcendent.Auth.Models.DAL
+namespace Xcendant.Auth.Models.DAL
 {
     public abstract class AbstractXcendentAuthContext:IdentityDbContext<XcendentUser>
     {

@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNet.Identity;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Xcendent.Auth.Models.DAL;
-using Xcendent.Auth.Models.Entities;
+using Xcendant.Auth.Models.DAL;
+using Xcendant.Auth.Models.Entities;
 
-namespace Xcendent.Auth.Models.Managers
+namespace Xcendant.Auth.Models.Managers
 {
     public abstract class AbstractXcendentUserManager<TUser>: UserManager<XcendentUser> where TUser : XcendentUser
     {

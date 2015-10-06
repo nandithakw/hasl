@@ -6,9 +6,9 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using Xcendent.Auth.Models.DAL;
-using Xcendent.Auth.Models.Entities;
-using Xcendent.Auth.Models.Managers;
+using Xcendant.Auth.Models.DAL;
+using Xcendant.Auth.Models.Entities;
+using Xcendant.Auth.Models.Managers;
 
 namespace Xcendant.Auth.Tests.Model.Managers
 {

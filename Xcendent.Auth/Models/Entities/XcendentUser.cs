@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace Xcendent.Auth.Models.Entities
+namespace Xcendant.Auth.Models.Entities
 {
     public class XcendentUser : IdentityUser
     {

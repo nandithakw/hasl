@@ -4,16 +4,16 @@ using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
 using System.Reflection;
-using Xcendent.Auth.Models.Managers;
-using Xcendent.Auth.Models.DAL;
+using Xcendant.Auth.Models.Managers;
+using Xcendant.Auth.Models.DAL;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Xcendent.Auth.Models.Entities;
+using Xcendant.Auth.Models.Entities;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity;
 
-[assembly: OwinStartup(typeof(Xcendent.Auth.Startup))]
+[assembly: OwinStartup(typeof(Xcendant.Auth.Startup))]
 
-namespace Xcendent.Auth
+namespace Xcendant.Auth
 {
     public partial class Startup
     {

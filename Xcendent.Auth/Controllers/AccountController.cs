@@ -12,13 +12,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
-using Xcendent.Auth.Models.Entities;
-using Xcendent.Auth.Models.Managers;
-using Xcendent.Auth.Providers;
-using Xcendent.Auth.Results;
-using Xcendent.Auth.ViewModels;
+using Xcendant.Auth.Models.Entities;
+using Xcendant.Auth.Models.Managers;
+using Xcendant.Auth.Providers;
+using Xcendant.Auth.Results;
+using Xcendant.Auth.ViewModels;
 
-namespace Xcendent.Auth.Controllers
+namespace Xcendant.Auth.Controllers
 {
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController

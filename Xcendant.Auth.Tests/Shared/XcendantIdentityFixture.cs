@@ -1,9 +1,9 @@
 ﻿using System;
 using Autofac;
 using Microsoft.AspNet.Identity.Owin;
-using Xcendent.Auth.Models.DAL;
-using Xcendent.Auth.Models.Entities;
-using Xcendent.Auth.Models.Managers;
+using Xcendant.Auth.Models.DAL;
+using Xcendant.Auth.Models.Entities;
+using Xcendant.Auth.Models.Managers;
 using Xcendant.Auth.Tests.Model.DAL;
 using Xcendant.Auth.Tests.Model.Managers;
 

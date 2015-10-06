@@ -6,11 +6,11 @@ using System.Web.Http;
 using Xcendant.Auth.Tests.Model.DAL;
 using Xcendant.Auth.Tests.Model.Managers;
 using Xcendant.Auth.Tests.Shared;
-using Xcendent.Auth.Controllers;
-using Xcendent.Auth.Models.DAL;
-using Xcendent.Auth.Models.Entities;
-using Xcendent.Auth.Models.Managers;
-using Xcendent.Auth.ViewModels;
+using Xcendant.Auth.Controllers;
+using Xcendant.Auth.Models.DAL;
+using Xcendant.Auth.Models.Entities;
+using Xcendant.Auth.Models.Managers;
+using Xcendant.Auth.ViewModels;
 using Xunit;
 
 namespace Xcendant.Auth.Tests.Controllers

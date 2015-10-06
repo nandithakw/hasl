@@ -13,10 +13,10 @@
 				 'bower_components/ngstorage/ngStorage.js',
 				 'bower_components/angular-mocks/angular-mocks.js',
                  'source/app/app.js',
-                   'source/app/services/authService.js',
-                     'source/app/controllers/authController.js',
-				 'source/app/controllers/localSingupController.js',
-                  'test/**/*Spec.js',
+                   'source/app/services/AuthService.js',
+                     'source/app/controllers/AuthController.js',
+				 'source/app/controllers/LocalSingupController.js',
+                  'test/*Spec.js',
         ],
         // list of files to exclude
         exclude: [
@@ -36,7 +36,7 @@
         // enable / disable colors in the output (reporters and logs)
         colors: true,
         // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-        logLevel: config.LOG_DEBUG,
+        logLevel: config.LOG_WARN,
 
         // enable / disable watching file and executing tests whenever any file changes
         autoWatch: false,

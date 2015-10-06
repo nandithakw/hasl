@@ -126,9 +126,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Xcendent.Auth\Xcendent.Auth.csproj">
+    <ProjectReference Include="..\Xcendent.Auth\Xcendant.Auth.csproj">
       <Project>{2a3c4bfc-982f-45b4-8fb1-51f40810ad9c}</Project>
-      <Name>Xcendent.Auth</Name>
+      <Name>Xcendant.Auth</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

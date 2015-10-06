@@ -10,10 +10,10 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
-using Xcendent.Auth.Models.Entities;
-using Xcendent.Auth.Models.Managers;
+using Xcendant.Auth.Models.Entities;
+using Xcendant.Auth.Models.Managers;
 
-namespace Xcendent.Auth.Providers
+namespace Xcendant.Auth.Providers
 {
     public class XcendentOAuthProvider : OAuthAuthorizationServerProvider
     {

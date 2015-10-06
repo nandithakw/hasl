@@ -42,7 +42,7 @@ module.exports = function (grunt) {
                  'source/app/services/authService.js',
                  'source/app/controllers/AuthController.js',
 				 'source/app/controllers/LocalSingupController.js',
-                 'test/**/*Spec.js',
+                 'test/*Spec.js',
             ]
         },
 
@@ -51,8 +51,7 @@ module.exports = function (grunt) {
                 'configFile': 'karma.conf.js',
                 'options': {
                     'files': [
-                      '<%= meta.jsFilesForTesting %>',
-                      'source/**/*.js'
+                      '<%= meta.jsFilesForTesting %>'                      
                     ],
                 }
             },
