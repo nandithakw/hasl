@@ -32,10 +32,11 @@
                         <input type="password" name="password" class="form-control required-input" id="exampleInputPassword1" placeholder="Password"  ng-model="localLoginData.password" required>
                         <div ng-messages="loginForm.password.$error" ng-if="loginForm.password.$touched">
                             <p class="validation-text" ng-message="required">Your password is required.</p>
-
+                            
                         </div>
                       </div>
 
+                    <p class="validation-text">Your are not a registered user.Please signup first.</p>
                       
                     <div ng-controller="ModalDemoCtrl">
                         <script type="text/ng-template" id="myModalContent.html">
