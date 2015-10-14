@@ -26,6 +26,11 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
           templateUrl: "views/change_password.html",
           controller: "PageCtrl"
       })
+    
+      .when("/complete_your_profile", {
+          templateUrl: "views/complete_your_profile.html",
+          controller: "PageCtrl"
+      })    
 
 
       //patient registration
