@@ -31,7 +31,11 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
           templateUrl: "views/complete_your_profile.html",
           controller: "PageCtrl"
       })    
-
+        
+      .when("/profile", {
+          templateUrl: "views/profile.html",
+          controller: "PageCtrl"
+      })
 
       //patient registration
        .when("/patient", {
