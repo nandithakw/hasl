@@ -11,6 +11,7 @@ using Xcendant.Auth.Models.Managers;
 using Xcendant.Auth.Providers;
 using Autofac;
 using Xcendant.Auth.Models.Entities;
+using Xcendent.Auth.Providers;
 
 namespace Xcendant.Auth
 {
@@ -62,7 +63,8 @@ namespace Xcendant.Auth
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
                 ClientId = "141496314941-4bc07d10tkmctlrcb0ealjp0n45d04dl.apps.googleusercontent.com",
-                ClientSecret = "UWQkdq18I3VB7udh3aBsxOK9"
+                ClientSecret = "UWQkdq18I3VB7udh3aBsxOK9",
+               Provider = new GoogleAuthProvider(),
             });
         }
     }

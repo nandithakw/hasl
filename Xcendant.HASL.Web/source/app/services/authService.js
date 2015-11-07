@@ -16,7 +16,19 @@ app.factory('authSerivce', ['$http', '$q', '$localStorage', 'authSettings', func
 
 
     };
-
+    var getLoggedInUserInfo = function () {
+        return $q(function (resolve, reject) {
+            var userInfo;
+            $http.get(authSettings.authApiServiceBaseUri + "/api/user/loggeduserinfo").then(function (response) {
+                userInfo = response.data;
+                if (userInfo) {
+                    resolve(userInfo);
+                } else {
+                    reject("unable to find the logged in use data");
+                }
+            });
+        });
+    }
     var registerNewLocalUser = function (user) {
         return $q(function (resolve, reject) {
             var message;
@@ -41,6 +53,48 @@ app.factory('authSerivce', ['$http', '$q', '$localStorage', 'authSettings', func
             });
         });
     };
+    var storeToken = function (token) {
+        $localStorage.authorizationData = { token: token.access_token, userName: token.user_name };
+    };
+
+    var getExternalUserInfo = function (externalAccessToken) {
+        return $q(function (resolve, reject) {
+            var userinfo;
+            $http.get(authSettings.authApiServiceBaseUri + "/api/account/userinfo",
+                { headers: { 'Authorization': 'Bearer ' + externalAccessToken.access_token } })
+                .then(function (response) {
+                    userinfo = response.data;
+                    resolve(userinfo);
+                }, function (error) {
+                    reject(error);
+                });
+        });
+
+    }
+    var registerNewExternalUser = function (externalAccessToken, userinfo) {
+        return $q(function (resolve, reject) {
+            if (userinfo.hasRegistered) {
+                reject(userinfo.email + " is already regsitered with the system");
+            } else {
+                $http.post(authSettings.authApiServiceBaseUri + "/api/account/registerexternal",
+                      { email: userinfo.email },
+                      { headers: { 'Authorization': 'Bearer ' + externalAccessToken.access_token } })
+               .then(function (response) {
+                   resolve(response.data);
+               }, function (error) {
+                   reject(error);
+               });
+            }
+
+        });
+
+
+    };
+
+    authServiceFactory.storeToken = storeToken;
+    authServiceFactory.getLoggedInUserInfo = getLoggedInUserInfo;
+    authServiceFactory.getExternalUserInfo = getExternalUserInfo;
+    authServiceFactory.registerNewExternalUser = registerNewExternalUser;
     authServiceFactory.localLogin = localLogin;
     authServiceFactory.registerNewLocalUser = registerNewLocalUser;
     authServiceFactory.getExteranlLoginProviders = getExteranlLoginProviders;

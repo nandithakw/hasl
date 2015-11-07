@@ -20,7 +20,7 @@ namespace Xcendant.Auth.Providers
         private readonly string publicClientID;
         public XcendentOAuthProvider(string publicClientId)
         {
-          
+
             if (publicClientId == null)
             {
                 throw new ArgumentNullException("publicClientId");
@@ -30,7 +30,7 @@ namespace Xcendant.Auth.Providers
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
-            ILifetimeScope scope =context.OwinContext.GetAutofacLifetimeScope();
+            ILifetimeScope scope = context.OwinContext.GetAutofacLifetimeScope();
             var userManager = scope.Resolve<AbstractXcendentUserManager<XcendentUser>>();
             XcendentUser user = await userManager.FindAsync(context.UserName, context.Password);
 
@@ -45,7 +45,7 @@ namespace Xcendant.Auth.Providers
             ClaimsIdentity cookiesIdentity = await userManager.GenerateUserIdentityAsync(user,
                 CookieAuthenticationDefaults.AuthenticationType);
 
-            AuthenticationProperties properties = CreateProperties(user.UserName);
+            AuthenticationProperties properties = CreateProperties(user);
             AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
             context.Validated(ticket);
             context.Request.Context.Authentication.SignIn(cookiesIdentity);
@@ -87,11 +87,11 @@ namespace Xcendant.Auth.Providers
             return Task.FromResult<object>(null);
         }
 
-        public static AuthenticationProperties CreateProperties(string userName)
+        public static AuthenticationProperties CreateProperties(XcendentUser user)
         {
             IDictionary<string, string> data = new Dictionary<string, string>
             {
-                { "user_name", userName }
+                { "user_name", user.UserName }, { ClaimTypes.Email,user.Email}
             };
             return new AuthenticationProperties(data);
         }

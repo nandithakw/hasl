@@ -17,7 +17,8 @@ using Xcendant.Auth.Models.Managers;
 using Xcendant.Auth.Providers;
 using Xcendant.Auth.Results;
 using Xcendant.Auth.ViewModels;
-
+using Xcendent.Auth.ViewModels;
+using Xcendent.Auth.Extensions;
 namespace Xcendant.Auth.Controllers
 {
     [RoutePrefix("api/Account")]
@@ -26,12 +27,16 @@ namespace Xcendant.Auth.Controllers
         private const string LocalLoginProvider = "Local";
         private AbstractXcendentUserManager<XcendentUser> _userManager;
 
+        [Authorize]
+        [Route("XXX")]
+        public object Get()
+        {
+            return Ok(new { AbcVdf = "bsdjcbads" });
+        }
 
-        public AccountController(AbstractXcendentUserManager<XcendentUser> userManager
-            )
+        public AccountController(AbstractXcendentUserManager<XcendentUser> userManager)
         {
             UserManager = userManager;
-            //  AccessTokenFormat = accessTokenFormat;
         }
 
         public AbstractXcendentUserManager<XcendentUser> UserManager
@@ -147,11 +152,11 @@ namespace Xcendant.Auth.Controllers
 
                 ClaimsIdentity oAuthIdentity = await UserManager.GenerateUserIdentityAsync(user,
                    OAuthDefaults.AuthenticationType);
-                ClaimsIdentity cookieIdentity = await UserManager.GenerateUserIdentityAsync(user,
-                    CookieAuthenticationDefaults.AuthenticationType);
+                //ClaimsIdentity cookieIdentity = await UserManager.GenerateUserIdentityAsync(user,
+                //    CookieAuthenticationDefaults.AuthenticationType);
 
-                AuthenticationProperties properties = XcendentOAuthProvider.CreateProperties(user.UserName);
-                Authentication.SignIn(properties, oAuthIdentity, cookieIdentity);
+                AuthenticationProperties properties = XcendentOAuthProvider.CreateProperties(user);
+                Authentication.SignIn(properties, oAuthIdentity);
             }
             else
             {
@@ -164,14 +169,20 @@ namespace Xcendant.Auth.Controllers
         }
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
         [Route("UserInfo")]
-        public UserInfoViewModel GetUserInfo()
+        public async Task<UserInfoViewModel> GetUserInfo()
         {
             ExternalLoginData externalLogin = ExternalLoginData.FromIdentity(User.Identity as ClaimsIdentity);
-
+            XcendentUser xcendantUser = null;
+            if (externalLogin != null)
+            {
+                xcendantUser = await UserManager.FindByEmailAsync(externalLogin.Email);
+            }
             return new UserInfoViewModel
             {
-                Email = User.Identity.GetUserName(),
-                HasRegistered = externalLogin == null,
+                Name = externalLogin != null ? externalLogin.Name : null,
+                Email = externalLogin != null ? externalLogin.Email : User.Identity.GetUserName(),
+                UserName = User.Identity.GetUserName(),
+                HasRegistered = xcendantUser != null,
                 LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
             };
         }
@@ -186,7 +197,7 @@ namespace Xcendant.Auth.Controllers
                 return BadRequest(ModelState);
             }
 
-            var info = await Authentication.GetExternalLoginInfoAsync();
+            var info = await Authentication.GetExternalLoginInfoWithBeaerAsync();
             if (info == null)
             {
                 return InternalServerError();
@@ -245,53 +256,7 @@ namespace Xcendant.Auth.Controllers
             return null;
         }
 
-        private class ExternalLoginData
-        {
-            public string LoginProvider { get; set; }
-            public string ProviderKey { get; set; }
-            public string UserName { get; set; }
 
-            public IList<Claim> GetClaims()
-            {
-                IList<Claim> claims = new List<Claim>();
-                claims.Add(new Claim(ClaimTypes.NameIdentifier, ProviderKey, null, LoginProvider));
-
-                if (UserName != null)
-                {
-                    claims.Add(new Claim(ClaimTypes.Name, UserName, null, LoginProvider));
-                }
-
-                return claims;
-            }
-
-            public static ExternalLoginData FromIdentity(ClaimsIdentity identity)
-            {
-                if (identity == null)
-                {
-                    return null;
-                }
-
-                Claim providerKeyClaim = identity.FindFirst(ClaimTypes.NameIdentifier);
-
-                if (providerKeyClaim == null || String.IsNullOrEmpty(providerKeyClaim.Issuer)
-                    || String.IsNullOrEmpty(providerKeyClaim.Value))
-                {
-                    return null;
-                }
-
-                if (providerKeyClaim.Issuer == ClaimsIdentity.DefaultIssuer)
-                {
-                    return null;
-                }
-
-                return new ExternalLoginData
-                {
-                    LoginProvider = providerKeyClaim.Issuer,
-                    ProviderKey = providerKeyClaim.Value,
-                    UserName = identity.FindFirstValue(ClaimTypes.Name)
-                };
-            }
-        }
 
         private static class RandomOAuthStateGenerator
         {

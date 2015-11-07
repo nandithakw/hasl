@@ -1,5 +1,5 @@
 
-var app = angular.module('hasl', ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'ngMessages', 'ngStorage', 'auth', 'localSingup', 'authSerivces']);
+var app = angular.module('hasl', ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'ngMessages', 'ngStorage', 'auth', 'localSingup', 'authSerivces', 'authComplete']);
 //angular.module('hasl', ['ui.bootstrap']);
 
 
@@ -19,19 +19,29 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
       // home
       .when("/home", {
           templateUrl: "views/landing_page.html",
-          controller: "PageCtrl"
+          controller: "PageCtrl",
+          resolve: {
+              auth: ['$q', 'authSerivce', function ($q, authSerivce) {
+                  var userInfo = authSerivce.getLoggedInUserInfo();
+                  if (userInfo) {
+                      return $q.when(userInfo);
+                  } else {
+                      return $q.reject({ authenticated: false });
+                  }
+              }]
+          },
       })
 
       .when("/change_password", {
           templateUrl: "views/change_password.html",
           controller: "PageCtrl"
       })
-    
+
       .when("/complete_your_profile", {
           templateUrl: "views/complete_your_profile.html",
           controller: "PageCtrl"
-      })    
-        
+      })
+
       .when("/profile", {
           templateUrl: "views/profile.html",
           controller: "PageCtrl"
@@ -108,8 +118,9 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
            controller: "PageCtrl"
        })
 
-
-
+       .when("/authcomplete.html", {
+           templateUrl: "views/auth_complete.html",
+       })
 
       // else 404
       .otherwise("/404", {
@@ -440,5 +451,32 @@ angular.module('hasl').directive("passwordVerify", function () {
     };
 });
 
+app.factory('haslintercptorservice', function ($localStorage) {
+    var interceptors = {
+
+        request: function (config) {
+            var token = $localStorage.authorizationData.token;
+            if (token) {
+                token = JSON.parse(token);
+                config.headers['Authorization'] = 'Bearer ' + token.access_token;
+                config.headers['Accept'] = 'application/json,text/plain, text/html';
+
+            }
+            return config;
+        }
+    };
+
+});
 
 
+app.run(["$rootScope", "$location", function ($rootScope, $location) {
+    $rootScope.$on("$routeChangeSuccess", function (userInfo) {
+        console.log(userInfo);
+    });
+
+    $rootScope.$on("$routeChangeError", function (event, current, previous, eventObj) {
+        if (eventObj.authenticated === false) {
+            $location.path("/login");
+        }
+    });
+}]);

@@ -15,10 +15,10 @@
         <!-- Blog Sidebar Widgets Column -->
         <div class="col-md-4">
             <!-- Blog Search Well -->
-            <div class="well login">
+            <div class="well login" ng-controller="authCtrl">
                 <h3>Login</h3>
 
-                    <form name="loginForm"  ng-controller="authCtrl" required>
+                    <form name="loginForm"   required>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address<span class='fa fa-asterisk required-star'></span></label>
                         <input type="email" name="email" class="form-control required-input" id="exampleInputEmail1" placeholder="Email"  ng-model="localLoginData.userName" required  />
@@ -73,7 +73,7 @@ loginForm.password.$dirty && loginForm.password.$invalid" ng-click="localSignIn(
                     <h4>Sign in Social media</h4>
                     <div class="clearfix"></div>
                     <a href="#"> <i class="fa fa-facebook-square fa-2 facebook-blue"></i></a>
-                    <a href ng-click="authWithExteranlProvider('Google')"><i class="fa fa-google-plus-square fa-2 google-plus-red"></i></a>
+                    <a href ng-click="exteranlSignIn('Google')"><i class="fa fa-google-plus-square fa-2 google-plus-red" ></i></a>
                     <a href="#"> <i class="fa  fa-twitter-square fa-2 twitter-blue"></i></a>
 
 

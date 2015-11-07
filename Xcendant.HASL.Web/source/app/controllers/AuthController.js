@@ -1,20 +1,22 @@
 ﻿var app = angular.module('auth', ['authSerivces', 'ngStorage']);
 
-app.controller("authCtrl", ['$scope', '$window', '$location', 'authSerivce', 'authSettings', function ($scope,$window, $location, authService, authSettings) {
+app.controller("authCtrl", ['$scope', '$window', '$location', 'authSerivce', 'authSettings', function ($scope, $window, $location, authService, authSettings) {
     $scope.google = "";
     $scope.faceBook = "";
     $scope.twitter = "";
     $scope.localLoginData = "";
-    $scope.authWithExteranlProvider = function (provider) {
+    $scope.exteranlSignIn = authWithExteranlProvider;
+
+    function authWithExteranlProvider(provider) {
         if (provider == "Google") {
-            $window.location.href =$scope.google.Url;
+            $window.location.href = $scope.google.url;
         }
     }
     $scope.localSignIn = localSignIn;
     function localSignIn(localLoginData) {
         authService.localLogin(localLoginData)
            .then(function (message) {
-              // alert(message);
+               // alert(message);
                $location.path("/home");
            }, function (error) {
 
@@ -24,11 +26,11 @@ app.controller("authCtrl", ['$scope', '$window', '$location', 'authSerivce', 'au
         getExternalProvidersAuthSettings();
     };
     function getExternalProvidersAuthSettings() {
-        var redirectUri =  location.protocol + '//' + location.host+'/authcomplete.html';
+        var redirectUri = location.protocol + '//' + location.host + '/authcomplete.html';
         authService.getExteranlLoginProviders(redirectUri).then(function (data) {
             data.forEach(function (element, index, array) {
-                element.Url = authSettings.authApiServiceBaseUri + element.Url;
-                if ("Google" == element.Name) {
+                element.url = authSettings.authApiServiceBaseUri + element.url;
+                if ("Google" == element.name) {
                     $scope.google = element;
 
                 }

@@ -32,12 +32,12 @@ namespace Xcendant.Auth
 
             app.UseAutofacMiddleware(container);
             app.UseAutofacWebApi(config);
-
+            ConfigureAuth(app);
             WebApiConfig.Register(config);
+
 
             app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
             app.UseWebApi(config);
-            ConfigureAuth(app);
 
             config.EnsureInitialized();
 

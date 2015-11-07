@@ -15,8 +15,6 @@ namespace Xcendant.Auth
             // Web API routes
             config.MapHttpAttributeRoutes();
 
-            
-
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
@@ -24,12 +22,12 @@ namespace Xcendant.Auth
             );
 
 
-            var formatters = GlobalConfiguration.Configuration.Formatters;
+            var formatters = config.Formatters;
             var jsonFormatter = formatters.JsonFormatter;
             var settings = jsonFormatter.SerializerSettings;
             settings.Formatting = Formatting.Indented;
             settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-
+            settings.DateFormatHandling = DateFormatHandling.IsoDateFormat;
         }
     }
 }
