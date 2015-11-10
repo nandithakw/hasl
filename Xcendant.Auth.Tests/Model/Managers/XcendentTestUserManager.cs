@@ -61,7 +61,7 @@ namespace Xcendant.Auth.Tests.Model.Managers
         //    });
 
         //}
-        public override async Task<ClaimsIdentity> GenerateUserIdentityAsync(XcendentUser user, string authenticationType)
+        public override async Task<ClaimsIdentity> GenerateUserIdentityAsync(XcendentUser user, string authenticationType, IList<Claim> extraClaims)
         {
             throw new NotImplementedException();
         }

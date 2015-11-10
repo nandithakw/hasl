@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
+using System.Web;
+using Xcendant.Auth.Models.Entities;
+
+namespace Xcendent.Auth.Providers
+{
+    public interface IUserDetailsProvider
+    {
+        XcendentUser GetRegisteredUserInfo(ClaimsIdentity identity);
+    }
+}

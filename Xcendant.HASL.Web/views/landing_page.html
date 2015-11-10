@@ -1,5 +1,5 @@
  <!-- Page Content -->
-    <div class="container">
+    <div class="container" ng-controller="SecuredHomeCtrl">
 
         <div class="row">
 
@@ -144,10 +144,10 @@
                 <!-- Blog Search Well -->
                 <div class="well login">
                     <div class="col-lg-12 profile-details-section text-center">
-
-               
-                    <img class="img-circle img-responsive img-center center-clock" src="img/user.png" alt="">
-                    <h3>Welcome Marlin</h3>
+                        <!--img/user.png-->
+                        
+                    <img class="img-circle img-responsive img-center center-clock" ng-src="{{loggedInUser.pictureUrl}}" alt="">
+                    <h3>Welcome {{loggedInUser.name}}</h3>
                    
                           
 

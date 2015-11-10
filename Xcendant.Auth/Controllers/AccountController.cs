@@ -19,6 +19,20 @@ using Xcendant.Auth.Results;
 using Xcendant.Auth.ViewModels;
 using Xcendent.Auth.ViewModels;
 using Xcendent.Auth.Extensions;
+using Autofac;
+using Autofac.Integration.Owin;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.OAuth;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using System.Web;
+using Xcendant.Auth.Models.Entities;
+using Xcendant.Auth.Models.Managers;
 namespace Xcendant.Auth.Controllers
 {
     [RoutePrefix("api/Account")]
@@ -128,7 +142,7 @@ namespace Xcendant.Auth.Controllers
                 return new ChallengeResult(provider, this);
             }
 
-            ExternalLoginData externalLogin = ExternalLoginData.FromIdentity(User.Identity as ClaimsIdentity);
+            LoginData externalLogin = LoginData.FromIdentity(User.Identity as ClaimsIdentity);
 
             if (externalLogin == null)
             {
@@ -151,11 +165,10 @@ namespace Xcendant.Auth.Controllers
                 Authentication.SignOut(DefaultAuthenticationTypes.ExternalCookie);
 
                 ClaimsIdentity oAuthIdentity = await UserManager.GenerateUserIdentityAsync(user,
-                   OAuthDefaults.AuthenticationType);
-                //ClaimsIdentity cookieIdentity = await UserManager.GenerateUserIdentityAsync(user,
-                //    CookieAuthenticationDefaults.AuthenticationType);
-
+                   OAuthDefaults.AuthenticationType, LoginData.GetClaimsFromExternalIdentityForLocalAuthority(externalLogin));
                 AuthenticationProperties properties = XcendentOAuthProvider.CreateProperties(user);
+
+
                 Authentication.SignIn(properties, oAuthIdentity);
             }
             else
@@ -171,7 +184,7 @@ namespace Xcendant.Auth.Controllers
         [Route("UserInfo")]
         public async Task<UserInfoViewModel> GetUserInfo()
         {
-            ExternalLoginData externalLogin = ExternalLoginData.FromIdentity(User.Identity as ClaimsIdentity);
+            LoginData externalLogin = LoginData.FromIdentity(User.Identity as ClaimsIdentity);
             XcendentUser xcendantUser = null;
             if (externalLogin != null)
             {

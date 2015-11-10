@@ -12,6 +12,7 @@ using Xcendant.Auth.Providers;
 using Autofac;
 using Xcendant.Auth.Models.Entities;
 using Xcendent.Auth.Providers;
+using Microsoft.Owin.Security.Facebook;
 
 namespace Xcendant.Auth
 {
@@ -23,7 +24,7 @@ namespace Xcendant.Auth
 
         public void ConfigureAuth(IAppBuilder app)
         {
-           // app.CreatePerOwinContext(XcendentAuthContext.Create);
+            // app.CreatePerOwinContext(XcendentAuthContext.Create);
             //app.CreatePerOwinContext<XcendentUserManager>(XcendentUserManager.Create);
 
             app.UseCors(CorsOptions.AllowAll);
@@ -56,16 +57,28 @@ namespace Xcendant.Auth
             //    consumerKey: "",
             //    consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //    appId: "",
-            //    appSecret: "");
 
-            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            FacebookAuthenticationOptions facebookAuthOptions = new FacebookAuthenticationOptions()
             {
-                ClientId = "141496314941-4bc07d10tkmctlrcb0ealjp0n45d04dl.apps.googleusercontent.com",
-                ClientSecret = "UWQkdq18I3VB7udh3aBsxOK9",
-               Provider = new GoogleAuthProvider(),
-            });
+                AppId = "553074264845816",
+                AppSecret = "c71200f8ba3d48f92433c9e1844a7239",
+                Provider = new FacebookAuthProvider()
+            };
+            //  facebookAuthOptions.Scope.Clear();
+            facebookAuthOptions.Scope.Add("public_profile");
+            facebookAuthOptions.Scope.Add("email");
+            app.UseFacebookAuthentication(facebookAuthOptions);
+            GoogleOAuth2AuthenticationOptions googleOptions = new GoogleOAuth2AuthenticationOptions();
+            googleOptions.Scope.Clear();
+            googleOptions.Scope.Add("profile");
+            googleOptions.Scope.Add("email");
+            googleOptions.ClientId = "141496314941-4bc07d10tkmctlrcb0ealjp0n45d04dl.apps.googleusercontent.com";
+            googleOptions.ClientSecret = "UWQkdq18I3VB7udh3aBsxOK9";
+            googleOptions.Provider = new GoogleAuthProvider();
+            googleOptions.AccessType = "online";
+            //  googleOptions.AuthenticationMode = Microsoft.Owin.Security.AuthenticationMode.Passive;
+
+            app.UseGoogleAuthentication(googleOptions);
         }
     }
 }

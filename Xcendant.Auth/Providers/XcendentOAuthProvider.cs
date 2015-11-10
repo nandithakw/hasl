@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Xcendant.Auth.Models.Entities;
 using Xcendant.Auth.Models.Managers;
+using Xcendent.Auth.ViewModels;
 
 namespace Xcendant.Auth.Providers
 {
@@ -40,15 +41,18 @@ namespace Xcendant.Auth.Providers
                 return;
             }
 
+            IList<Claim> extraClaims = LoginData.GetClaimsFromUserForLocalAuthority(user);
+
             ClaimsIdentity oAuthIdentity = await userManager.GenerateUserIdentityAsync(user,
-               OAuthDefaults.AuthenticationType);
-            ClaimsIdentity cookiesIdentity = await userManager.GenerateUserIdentityAsync(user,
-                CookieAuthenticationDefaults.AuthenticationType);
+               OAuthDefaults.AuthenticationType, extraClaims);
+            //ClaimsIdentity cookiesIdentity = await userManager.GenerateUserIdentityAsync(user,
+            // CookieAuthenticationDefaults.AuthenticationType, null);
+
 
             AuthenticationProperties properties = CreateProperties(user);
             AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
             context.Validated(ticket);
-            context.Request.Context.Authentication.SignIn(cookiesIdentity);
+            context.Request.Context.Authentication.SignIn(properties, oAuthIdentity);
         }
 
         public override Task TokenEndpoint(OAuthTokenEndpointContext context)

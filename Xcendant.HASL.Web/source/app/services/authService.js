@@ -26,6 +26,8 @@ app.factory('authSerivce', ['$http', '$q', '$localStorage', 'authSettings', func
                 } else {
                     reject("unable to find the logged in use data");
                 }
+            }, function (error) {
+                reject("unable to find the logged in use data");
             });
         });
     }
@@ -90,7 +92,11 @@ app.factory('authSerivce', ['$http', '$q', '$localStorage', 'authSettings', func
 
 
     };
+    var logout = function () {
+        $localStorage.$reset();
+    };
 
+    authServiceFactory.logout = logout;
     authServiceFactory.storeToken = storeToken;
     authServiceFactory.getLoggedInUserInfo = getLoggedInUserInfo;
     authServiceFactory.getExternalUserInfo = getExternalUserInfo;

@@ -33,7 +33,7 @@ namespace Xcendant.Auth.Models.Managers
                 RequireLowercase = false,
                 RequireUppercase = false,
             };
-            
+
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
@@ -43,11 +43,15 @@ namespace Xcendant.Auth.Models.Managers
 
 
 
-        public override async Task<ClaimsIdentity> GenerateUserIdentityAsync(XcendentUser user, string authenticationType)
+        public override async Task<ClaimsIdentity> GenerateUserIdentityAsync(XcendentUser user, string authenticationType, IList<Claim> extraClaims)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await this.CreateIdentityAsync(user, authenticationType);
             // Add custom user claims here
+            if (extraClaims != null)
+            {
+                userIdentity.AddClaims(extraClaims);
+            }
             return userIdentity;
         }
 

@@ -1,5 +1,5 @@
 
-var app = angular.module('hasl', ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'ngMessages', 'ngStorage', 'auth', 'localSingup', 'authSerivces', 'authComplete']);
+var app = angular.module('hasl', ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'ngMessages', 'ngStorage', 'auth', 'localSingup', 'authSerivces', 'authComplete', 'securedhome']);
 //angular.module('hasl', ['ui.bootstrap']);
 
 
@@ -8,26 +8,35 @@ var app = angular.module('hasl', ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'ngMes
 /**
  * Configure the Routes
  */
-app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+app.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
     $locationProvider.html5Mode(true);
+    $httpProvider.interceptors.push('haslintercptorservice');
     $routeProvider
       // root
       .when("/", {
-          templateUrl: "views/login.html",
-          controller: "PageCtrl"
+          redirectTo: "/home",
       })
+     .when("/login", {
+         templateUrl: "views/login.html",
+         controller: "PageCtrl"
+     })
+    .when("/logout", {
+        redirectTo: "/login",
+    })
       // home
       .when("/home", {
           templateUrl: "views/landing_page.html",
           controller: "PageCtrl",
           resolve: {
               auth: ['$q', 'authSerivce', function ($q, authSerivce) {
-                  var userInfo = authSerivce.getLoggedInUserInfo();
-                  if (userInfo) {
-                      return $q.when(userInfo);
-                  } else {
-                      return $q.reject({ authenticated: false });
-                  }
+                  return $q(function (resolve, reject) {
+                      var userInfo = authSerivce.getLoggedInUserInfo();
+                      userInfo.then(function (data) {
+                          resolve(data);
+                      }, function (data) {
+                          reject({ authenticated: false });
+                      });
+                  });
               }]
           },
       })
@@ -455,22 +464,23 @@ app.factory('haslintercptorservice', function ($localStorage) {
     var interceptors = {
 
         request: function (config) {
-            var token = $localStorage.authorizationData.token;
-            if (token) {
-                token = JSON.parse(token);
-                config.headers['Authorization'] = 'Bearer ' + token.access_token;
+            var authdata = $localStorage.authorizationData;
+            if (authdata && authdata.token) {
+
+                config.headers['Authorization'] = 'Bearer ' + authdata.token;
                 config.headers['Accept'] = 'application/json,text/plain, text/html';
 
             }
             return config;
         }
     };
+    return interceptors;
 
 });
 
 
 app.run(["$rootScope", "$location", function ($rootScope, $location) {
-    $rootScope.$on("$routeChangeSuccess", function (userInfo) {
+    $rootScope.$on("$routeChangeSuccess", function (event, current, previous) {
         console.log(userInfo);
     });
 

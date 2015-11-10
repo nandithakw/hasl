@@ -6,10 +6,12 @@ app.controller("authCtrl", ['$scope', '$window', '$location', 'authSerivce', 'au
     $scope.twitter = "";
     $scope.localLoginData = "";
     $scope.exteranlSignIn = authWithExteranlProvider;
-
+    $scope.loginFailed = false;
     function authWithExteranlProvider(provider) {
         if (provider == "Google") {
             $window.location.href = $scope.google.url;
+        } else if (provider == "Facebook") {
+            $window.location.href = $scope.faceBook.url;
         }
     }
     $scope.localSignIn = localSignIn;
@@ -19,10 +21,11 @@ app.controller("authCtrl", ['$scope', '$window', '$location', 'authSerivce', 'au
                // alert(message);
                $location.path("/home");
            }, function (error) {
-
+               $scope.loginFailed = true;
            });
     }
     function init() {
+        authService.logout();
         getExternalProvidersAuthSettings();
     };
     function getExternalProvidersAuthSettings() {
@@ -32,6 +35,9 @@ app.controller("authCtrl", ['$scope', '$window', '$location', 'authSerivce', 'au
                 element.url = authSettings.authApiServiceBaseUri + element.url;
                 if ("Google" == element.name) {
                     $scope.google = element;
+
+                } else if ("Facebook" == element.name) {
+                    $scope.faceBook = element;
 
                 }
             });
