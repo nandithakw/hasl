@@ -1,0 +1,728 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>testreport_onbuild HASL Test Plan1</title>
+<link type="text/css" rel="stylesheet" href="http://192.168.0.11/testlink/gui/themes/default/css/tl_documents.css" />
+<style type="text/css" media="print">.notprintable { display:none;}</style>
+</head>
+<body>
+<div>
+<div style="float:right;">TestLink Community [configure $tlCfg-&gt;document_generator-&gt;company_name]</div>
+<div>&nbsp;</div><hr />
+<p style="text-align: center;"><img alt="TestLink logo" title="configure using $tlCfg->document_generator->company_logo" height="53" src="http://192.168.0.11/testlink/gui/themes/default/images/tl-logo-transparent-25.png" /></div>
+<div class="doc_title"><p>Test Plan Execution Report (on specific build)</p></div>
+<div class="doc_title" style="text-align:left;margin: auto;"><p>Test Project: HASL<br>Test Plan: HASL Test Plan1<br>Build: HASL Sprint 1</p></div>
+<div class="summary"><p id="printedby">Printed by TestLink on 13/11/2015</p></div>
+<div class="pagefooter" id="copyright">2012 &copy; TestLink Community</div>
+<h0 class='doclevel'>Login</h0>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-1: Verify as a non member ,  a new user can sign up and create an account</th></tr>
+<tr><td colspan="5"><span class="label">Summary:</span><br /><p>
+	This test verifies&nbsp; ,as&nbsp; a&nbsp; first time visitor, the site allows to&nbsp; create an account which a user can sign in.</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	Insert first name</p>
+</td><td><p>
+	Inserted first name is shown</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	Insert last name</p>
+</td><td><p>
+	Inserted last name is displayed.</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	Insert email according to the given format</p>
+</td><td><p>
+	inserted email is shown</p>
+</td><td></td></tr><tr><td width="5">4</td><td><p>
+	Insert the password and the confirm password as the same</p>
+</td><td><p>
+	The entered password is&nbsp;&nbsp; encoded and shown as well as the confirm password.</p>
+</td><td></td></tr><tr><td width="5">5</td><td><p>
+	click on sign in</p>
+</td><td><p>
+	&nbsp;The&nbsp;&nbsp; welcome page is shown</p>
+<p>
+	the entered&nbsp; first name is shown with default profile picture.</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result:</span></td><td  colspan="4" ><b>Passed</b></td></tr>
+<tr><td width="20%"><span class="label">Execution duration (min):</span></td><td  colspan="4" ><b></b></td></tr>
+<tr><td width="20%" valign="top">Build</td><td  colspan="4" >HASL Sprint 1</b></td></tr>
+<tr><td width="20%" valign="top">Tester</td><td  colspan="4" >iroshani</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-2:  Verify as a non member ,  a new user can sign up and create an account using facebook account</th></tr>
+<tr><td colspan="5"><span class="label">Summary:</span><br /><p>
+	This test verifies&nbsp; ,as&nbsp; a&nbsp; first time visitor, the site allows to&nbsp; create an account which a user can sign in using a valid facebook credentials.</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	click on the facebook icon on the top of the screen</p>
+</td><td><p>
+	The sign up screen using facebook credentials are shown</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	Insert an email account which is linked with facebook</p>
+</td><td><p>
+	Inserted&nbsp; email account is shown.</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	Insert&nbsp;&nbsp; the password which is linked&nbsp; facebook account</p>
+</td><td><p>
+	Inserted&nbsp; password is shown</p>
+</td><td></td></tr><tr><td width="5">4</td><td><p>
+	click on sign in</p>
+</td><td><p>
+	&nbsp;The&nbsp;&nbsp; welcome page is shown</p>
+<p>
+	the entered&nbsp; first name which is linked with facebook is shown with profile picture.</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-5: Verify as a non member , user can sign up with hasl by entering valid google plus credentials</th></tr>
+<tr><td colspan="5"><span class="label">Summary:</span><br /><p>
+	&nbsp;</p>
+<p>
+	This test verifies&nbsp; ,a non member can register in HASL by entering valid google plus credentials.</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	click on the google+ icon on the top of the screen</p>
+</td><td><p>
+	The sign up screen using google+ credentials are shown</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	Insert an email account which is linked with google+</p>
+</td><td><p>
+	Inserted&nbsp; email account is shown.</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	Insert&nbsp;&nbsp; the password which is linked&nbsp; google account</p>
+</td><td><p>
+	Inserted&nbsp; password is shown</p>
+</td><td></td></tr><tr><td width="5">4</td><td><p>
+	click on sign in</p>
+</td><td><p>
+	&nbsp;The&nbsp;&nbsp; welcome page is shown</p>
+<p>
+	the first name given in the google+ account&nbsp; is shown with profile picture.</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-6:  Verify as a non member ,  a new user can sign up and create an account using  twitter</th></tr>
+<tr><td colspan="5"><span class="label">Summary:</span><br /><p>
+	This test verifies&nbsp; ,as&nbsp; a&nbsp; first time visitor, the site allows to&nbsp; create an account which a user can sign in using valid twitter+ credentials.</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	click on the twitter+ icon on the top of the screen</p>
+</td><td><p>
+	The sign up screen using twitter+ credentials are shown</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	Insert an email account which is linked with twitter+</p>
+</td><td><p>
+	Inserted&nbsp; email account is shown.</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	Insert&nbsp;&nbsp; the password which is linked&nbsp; twitter account</p>
+</td><td><p>
+	Inserted&nbsp; password is shown</p>
+</td><td></td></tr><tr><td width="5">4</td><td><p>
+	click on sign in</p>
+</td><td><p>
+	&nbsp;The&nbsp;&nbsp; welcome page is shown</p>
+<p>
+	the first name given in the twitter+ account&nbsp; is shown with profile picture.</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-3: Verify as a non member , when user gives an invalid email adreess validation message is shown</th></tr>
+<tr><td colspan="5"><span class="label">Summary:</span><br /><p>
+	This test verifies&nbsp; ,when user tries to sign up using the sign up screen and gives an invalid email address, a validation message is shown informing the user about&nbsp; invalid email address.</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	Insert first name for</p>
+</td><td><p>
+	Inserted first name is shown</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	Insert last name</p>
+</td><td><p>
+	Inserted last name is displayed.</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	Insert email according to the given format</p>
+<p>
+	some2gmail.com</p>
+</td><td><p>
+	inserted email is shown, on loss focus validation message is shown below the text box saying the eneterd email address format is incorrect.</p>
+</td><td></td></tr><tr><td width="5">4</td><td><p>
+	give an email according to the correct format</p>
+</td><td><p>
+	The&nbsp; newly entered email address is shown.</p>
+<p>
+	on loss focus&nbsp; the validation message is not shown.</p>
+</td><td></td></tr><tr><td width="5">5</td><td><p>
+	Insert the password and the confirm password as the same</p>
+</td><td><p>
+	The entered password is&nbsp;&nbsp; encoded and shown as well as the confirm password.</p>
+</td><td></td></tr><tr><td width="5">7</td><td><p>
+	click on sign in</p>
+</td><td><p>
+	&nbsp;The&nbsp;&nbsp; welcome page is shown</p>
+<p>
+	the entered&nbsp; first name is shown with default profile picture.</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result:</span></td><td  colspan="4" ><b>Passed</b></td></tr>
+<tr><td width="20%"><span class="label">Execution duration (min):</span></td><td  colspan="4" ><b></b></td></tr>
+<tr><td width="20%" valign="top">Build</td><td  colspan="4" >HASL Sprint 1</b></td></tr>
+<tr><td width="20%" valign="top">Tester</td><td  colspan="4" >iroshani</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-4: Verify as a non member ,  a when enter a different password than the first password validation shown</th></tr>
+<tr><td colspan="5"><span class="label">Summary:</span><br /><p>
+	This test verifies&nbsp; ,as&nbsp; a&nbsp; first time visitor, a when enter a different password than the first password validation shown</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	click on the facebook icon on the top of the screen</p>
+</td><td><p>
+	The sign up screen using facebook credentials are shown</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	Insert an email account which is linked with facebook</p>
+</td><td><p>
+	Inserted&nbsp; email account is shown.</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	Insert&nbsp;&nbsp; the password which is linked&nbsp; facebook account</p>
+</td><td><p>
+	Inserted&nbsp; password is shown</p>
+</td><td></td></tr><tr><td width="5">4</td><td><p>
+	Insert a password which is&nbsp; different tahn the first one</p>
+</td><td><p>
+	On loss focus a validation message&nbsp;&nbsp; is shown as&nbsp;&nbsp; two passwords does not match.</p>
+</td><td></td></tr><tr><td width="5">5</td><td><p>
+	Enter the same password as the first password</p>
+</td><td><p>
+	on the loss focus&nbsp; validation message is not shown.</p>
+</td><td></td></tr><tr><td width="5">6</td><td><p>
+	click on sign in</p>
+</td><td><p>
+	&nbsp;The&nbsp;&nbsp; welcome page is shown</p>
+<p>
+	the entered&nbsp; first name is shown with profile picture.</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result:</span></td><td  colspan="4" ><b>Passed</b></td></tr>
+<tr><td width="20%"><span class="label">Execution duration (min):</span></td><td  colspan="4" ><b></b></td></tr>
+<tr><td width="20%" valign="top">Build</td><td  colspan="4" >HASL Sprint 1</b></td></tr>
+<tr><td width="20%" valign="top">Tester</td><td  colspan="4" >iroshani</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-7: Verify as a non member ,  a when enter a all ready  registered email, it will validate</th></tr>
+<tr><td colspan="5"><span class="label">Summary:</span><br /><p>
+	This test verifies&nbsp; ,as&nbsp; a&nbsp; first time visitor,&nbsp; when enter a email address which is already registered, user will be&nbsp; informed about it.</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	click on the facebook icon on the top of the screen</p>
+</td><td><p>
+	The sign up screen using facebook credentials are shown</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	Insert an email account which is already used&nbsp; and registered</p>
+</td><td><p>
+	Inserted&nbsp; email account is shown. In loss focus user will be informed that email address is already registered.</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result:</span></td><td  colspan="4" ><b>Failed</b></td></tr>
+<tr><td width="20%"><span class="label">Execution duration (min):</span></td><td  colspan="4" ><b></b></td></tr>
+<tr><td width="20%" valign="top">Build</td><td  colspan="4" >HASL Sprint 1</b></td></tr>
+<tr><td width="20%" valign="top">Tester</td><td  colspan="4" >iroshani</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-8: Verify as a user who enters a email address not linked with facebook will be alerted.</th></tr>
+<tr><td colspan="5"><span class="label">Summary:</span><br /><p>
+	This test verifies&nbsp; ,if a user eneters an invalid email which is not linked with facebook, user will be alerted.</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	click on the facebook icon on the top of the screen</p>
+</td><td><p>
+	The sign up screen using facebook credentials are shown</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	Insert an email account which is not&nbsp; linked with facebook</p>
+</td><td><p>
+	Inserted&nbsp; email account is shown.</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	Insert&nbsp;&nbsp; the password which is linked&nbsp; facebook account</p>
+</td><td><p>
+	Inserted&nbsp; password is shown</p>
+</td><td></td></tr><tr><td width="5">4</td><td><p>
+	click on sign in</p>
+</td><td><p>
+	Alert message is shown that the given email address is not linked with facebook.( this&nbsp; should be ideally handeled by facebook API)</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-9: Verify as a non member ,  when signing up with a unliked email with googleplus , will be alerted</th></tr>
+<tr><td colspan="5"><span class="label">Summary:</span><br /><p>
+	&nbsp;</p>
+<p>
+	This test verifies&nbsp; ,if a user eneters an invalid email which is not linked with</p>
+<p>
+	&nbsp;google+ user will be alerted.</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	click on the google+ icon on the top of the screen</p>
+</td><td><p>
+	The sign up screen using google+ credentials are shown</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	Insert an email account which is&nbsp; not linked with google+</p>
+</td><td><p>
+	Inserted&nbsp; email account is shown.</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	Insert&nbsp;&nbsp; the password which is linked&nbsp; google account</p>
+</td><td><p>
+	Inserted&nbsp; password is shown</p>
+</td><td></td></tr><tr><td width="5">4</td><td><p>
+	click on sign in</p>
+</td><td><p>
+	User would be informed , that email address is not linked with google +.( should be handeled by Google + api)</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-10: Verify  when signing up if a user enters a email address which is not linked , user will be notified</th></tr>
+<tr><td colspan="5"><span class="label">Summary:</span><br /><p>
+	This test verifies&nbsp; , when sigining up using twitter, if a user enters an email address which is not linked with twitter he , will be notified.</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	click on the twitter+ icon on the top of the screen</p>
+</td><td><p>
+	The sign up screen using twitter+ credentials are shown</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	Insert an email account which is&nbsp; not linked with twitter</p>
+</td><td><p>
+	Inserted&nbsp; email account is shown.</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	Insert&nbsp;&nbsp; the password which is linked&nbsp; twitter account</p>
+</td><td><p>
+	Inserted&nbsp; password is shown</p>
+</td><td></td></tr><tr><td width="5">4</td><td><p>
+	click on sign in</p>
+</td><td><p>
+	&nbsp;user will be informed ( this would be handeled by twitter api)</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-11:  Verify as a user who enters an incorrect facebook  password facebook will be alert</th></tr>
+<tr><td colspan="5"><span class="label">Summary:</span><br /><p>
+	This test verifies&nbsp; ,if a user enters a invalid password which for&nbsp; facebook, user will be alerted.</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	click on the facebook icon on the top of the screen</p>
+</td><td><p>
+	The sign up screen using facebook credentials are shown</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	Insert an email account which is&nbsp; linked with facebook</p>
+</td><td><p>
+	Inserted&nbsp; email account is shown.</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	Insert&nbsp;&nbsp; a&nbsp; password which is&nbsp; not linked&nbsp; facebook account</p>
+</td><td><p>
+	Inserted&nbsp; password is shown</p>
+</td><td></td></tr><tr><td width="5">4</td><td><p>
+	click on sign in</p>
+</td><td><p>
+	Alert message is shown that the given password is incorrect .( this&nbsp; should be ideally handeled by facebook API)</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-12: verify tab order and the close functionality of the screen</th></tr>
+<tr><td colspan="5"><span class="label">Summary:</span><br /><p>
+	This test case ensures, inorder to maximise the accessibility, tab order is set correctly and the close button is working.</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	verify by pressing tab user is able to navigate through the sign up screen</p>
+</td><td><p>
+	&nbsp;using the tab key user is able to naviagte through the screen</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	&nbsp;click on close button of the screen</p>
+</td><td><p>
+	The&nbsp; screen is closed.</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result:</span></td><td  colspan="4" ><b>Passed</b></td></tr>
+<tr><td width="20%"><span class="label">Execution duration (min):</span></td><td  colspan="4" ><b></b></td></tr>
+<tr><td width="20%" valign="top">Build</td><td  colspan="4" >HASL Sprint 1</b></td></tr>
+<tr><td width="20%" valign="top">Tester</td><td  colspan="4" >iroshani</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-13:  Verify as a non member ,  a new user   needs to enter all information inorder to sign up</th></tr>
+<tr><td colspan="5"><span class="label">Summary:</span><br /><p>
+	This test verifies&nbsp; ,as&nbsp; a&nbsp; first time visito user needs to enter all the listed information, or else he/she would be alerted.</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	click on signin without entering any of the information</p>
+</td><td><p>
+	all the mandatory feilds are shown, and alerted to the user as to enter the information.</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result:</span></td><td  colspan="4" ><b>Passed</b></td></tr>
+<tr><td width="20%"><span class="label">Execution duration (min):</span></td><td  colspan="4" ><b></b></td></tr>
+<tr><td width="20%" valign="top">Build</td><td  colspan="4" >HASL Sprint 1</b></td></tr>
+<tr><td width="20%" valign="top">Tester</td><td  colspan="4" >iroshani</b></td></tr>
+</table>
+</div>
+<h1 class='doclevel'>User Profile</h1>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-36: Verify if the user enters a different name from the signup, it will be validated</th></tr>
+<tr><td colspan="5"><span class="label">Summary:</span><br /><p>
+	User is entering the first name and last name diffrent to the data entered in the signup</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	user enters a different name than the name used in the signup for First name and last name</p>
+</td><td><p>
+	User will be alerted indicating that the first name and last name is different from the names entreed in sign up</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	enter the valid first name and last name as entered in the sign up</p>
+</td><td><p>
+	System should allow to proceed.</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<h2 class='doclevel'>Hospital Registration</h2>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-14: Verify page view without data</th></tr>
+<tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	User logs in with a new admin account</p>
+</td><td><p>
+	System should navigate user to the home page</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	User clicks on hospital registration page</p>
+</td><td><p>
+	&#39;Add New&#39; button should be visible witth the information &#39;No Data Found&#39;</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	User logs out and logs in with an existing admin login with no hospital data</p>
+</td><td><p>
+	System should navigate user to home page</p>
+</td><td></td></tr><tr><td width="5">4</td><td><p>
+	User clicks on hospital registration page</p>
+</td><td><p>
+	&#39;Add New&#39; button should be visible witth the information &#39;No Data Found&#39;</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-16: Verify adding a new hospital record</th></tr>
+<tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	Click on &#39;Add New&#39; button</p>
+</td><td><p>
+	1. System should display the Hospital Registration form with empty fields.</p>
+<p>
+	2. Hospital ID should be system generated.</p>
+<p>
+	&nbsp;</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	Add valid data to the available fields.&nbsp;</p>
+</td><td><p>
+	System should allow the user to add data.</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	Click &#39;Reset&#39; button</p>
+</td><td><p>
+	System clears the added data.</p>
+</td><td></td></tr><tr><td width="5">4</td><td><p>
+	Add valid data to the available fields.</p>
+</td><td><p>
+	System should allow user to add data.</p>
+</td><td></td></tr><tr><td width="5">5</td><td><p>
+	Click Submit</p>
+</td><td><p>
+	System should allow to submit data and the new hospital record should get added to the list.</p>
+</td><td></td></tr><tr><td width="5">6</td><td></td><td></td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-17: Verify field validation-Hospital Name</th></tr>
+<tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	Enter valid data to mandatory fields</p>
+</td><td><p>
+	system allows entering data</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	Enter special characters to hospital name field and click submit</p>
+</td><td><p>
+	System should display an error message</p>
+</td><td></td></tr><tr><td width="5">4</td><td><p>
+	enter a valid hospital name and click submit&nbsp;</p>
+<p>
+	ex: carsons01</p>
+</td><td><p>
+	system should allow to proceed</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-18: Verify field validation-city</th></tr>
+<tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	Enter valid data to other mandatory fields</p>
+</td><td><p>
+	system allows entering data</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	Enter special characters to city field and click submit</p>
+</td><td><p>
+	System should display an error message</p>
+</td><td></td></tr><tr><td width="5">4</td><td><p>
+	enter a valid city name and click submit</p>
+<p>
+	ex:Kohuwala</p>
+</td><td><p>
+	system should allow to proceed</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-19: Veify field validation-telephone</th></tr>
+<tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	Enter valid data to other mandatory fields</p>
+</td><td><p>
+	system allows entering data</p>
+</td><td></td></tr><tr><td width="5">3</td><td><div>
+	Enter special characters to telephone field and click submit</div>
+<div>
+	&nbsp;</div>
+</td><td><p>
+	System should display an error message</p>
+</td><td></td></tr><tr><td width="5">4</td><td><div>
+	Enter characters to telephone field and click submit</div>
+<div>
+	&nbsp;</div>
+</td><td><p>
+	System should display an error message</p>
+</td><td></td></tr><tr><td width="5">5</td><td><div>
+	Enter characters and numbers to telephone field and click submit</div>
+<div>
+	&nbsp;</div>
+</td><td><p>
+	System should display an error message</p>
+</td><td></td></tr><tr><td width="5">6</td><td><p>
+	Enter a valid telephone number and click submit.</p>
+<p>
+	ex:0112918971</p>
+</td><td><p>
+	System should allow to proceed</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-20: Verify field validation-email address</th></tr>
+<tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><div>
+	Enter valid data to other mandatory fields</div>
+<div>
+	&nbsp;</div>
+</td><td><p>
+	system allows entering data</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	Enter the email without usename and click submit</p>
+<p>
+	ex:@hasl.com</p>
+</td><td><p>
+	system should display an error message</p>
+</td><td></td></tr><tr><td width="5">4</td><td><p>
+	enter the email without @</p>
+<p>
+	ex:iroshanihasl.com</p>
+</td><td><p>
+	system should display an error message</p>
+</td><td></td></tr><tr><td width="5">5</td><td><p>
+	enter the email without the domain name</p>
+<p>
+	ex:iroshani@.com</p>
+</td><td><p>
+	system should display an error message</p>
+</td><td></td></tr><tr><td width="5">6</td><td><p>
+	enter the email without .com</p>
+<p>
+	ex:iroshani@hasl</p>
+</td><td><p>
+	system should display an error message</p>
+</td><td></td></tr><tr><td width="5">7</td><td><p>
+	enter a valid email address and click submit</p>
+<p>
+	ex:iroshani@hasl.com</p>
+</td><td><p>
+	system should allow to proceed.</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-21: Verify field validation-district</th></tr>
+<tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><div>
+	Enter valid data to other mandatory fields</div>
+<div>
+	&nbsp;</div>
+</td><td><p>
+	system allows entering data</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	select a valid district from the drop down and click submit.</p>
+</td><td><p>
+	system should allow to proceed.</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-22: Verify field validation-province</th></tr>
+<tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><div>
+	Enter valid data to other mandatory fields</div>
+<div>
+	&nbsp;</div>
+</td><td><p>
+	system allows entering data</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	select a valid province from the drop down and click sumbit</p>
+</td><td><p>
+	system should allow to proceed</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-23: Verify field validation-country</th></tr>
+<tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><div>
+	Enter valid data to other mandatory fields</div>
+<div>
+	&nbsp;</div>
+</td><td><p>
+	system allows entering data</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	select a valid country from the drop down and click submit</p>
+</td><td><p>
+	system should allow to proceed.</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-24: Verify Field Validation-mobile number</th></tr>
+<tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><div>
+	Enter valid data to other mandatory fields</div>
+<div>
+	&nbsp;</div>
+</td><td><p>
+	system allows entering data</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	enter special characters into mobile number field and click submit</p>
+</td><td><p>
+	system should display an error message.</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	enter characters into mobile number field</p>
+</td><td><p>
+	system should display an error message</p>
+</td><td></td></tr><tr><td width="5">4</td><td><p>
+	enter a numeric data into mobile number field and click submit</p>
+</td><td><p>
+	system should allow to proceed</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-26: Reset Button- Add hospital form</th></tr>
+<tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><div>
+	Enter valid data to some fields</div>
+<div>
+	&nbsp;</div>
+</td><td><p>
+	system allows entering data</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	click &#39;Reset&#39; button</p>
+</td><td><p>
+	system should clear the entered data</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-27: Verify button functionalities-View, Edit &amp; Delete</th></tr>
+<tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	click on &#39;View&#39; button available in the action column of a record</p>
+</td><td><p>
+	The add hospital form for the particular record should open below the record with the previously entered data in a non editable mode.</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	Click on &#39;Edit&#39; button available in the action column of a record</p>
+</td><td><p>
+	the add hospital form of the particular record should open below the record with the previously entered data in an editable mode.</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	edit some data in the fields</p>
+</td><td><p>
+	system should allow to edit data</p>
+</td><td></td></tr><tr><td width="5">4</td><td><p>
+	click submit</p>
+</td><td><p>
+	system should allow to submit data</p>
+</td><td></td></tr><tr><td width="5">5</td><td><p>
+	Check the edited data in the hospital records</p>
+</td><td><p>
+	edited data should be available in the hospital records.</p>
+</td><td></td></tr><tr><td width="5">6</td><td><p>
+	Click on &#39;Delete&#39; button available in the action column of the record.</p>
+</td><td><p>
+	System should display a delete confirmation message.</p>
+</td><td></td></tr><tr><td width="5">7</td><td><p>
+	Click OK</p>
+</td><td><p>
+	System should delete the record successfully and remove from the list.</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-30: Verify Button functionalities- Search &amp; Reset</th></tr>
+<tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	enter values into the&#39;Search &amp; Filter&#39; text field</p>
+<p>
+	Ex:Hospital001&nbsp;</p>
+</td><td><p>
+	system should allow to enter text into the text field</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	Click &#39;Search&#39;</p>
+</td><td><p>
+	System should search for the entered keyword and retrieve results</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	Enter wild card characters and click search.</p>
+<p>
+	Ex: %01, hos%, *</p>
+</td><td><p>
+	System should retrieve data according to the entered wild card search criteria</p>
+</td><td></td></tr><tr><td width="5">4</td><td><p>
+	Click on &#39;Reset&#39;</p>
+</td><td><p>
+	System will remove the search results and display the previously shown list.</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case HASL-32: Verify Mandatory fields</th></tr>
+<tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>
+	keep city field empty and click submit</p>
+</td><td><p>
+	system should display an error message</p>
+</td><td></td></tr><tr><td width="5">2</td><td><p>
+	keep telephone field empty and click submit</p>
+</td><td><p>
+	system should display an error message</p>
+</td><td></td></tr><tr><td width="5">3</td><td><p>
+	keep email field empty and click submit</p>
+</td><td><p>
+	system should display an error message</p>
+</td><td></td></tr><tr><td width="5">4</td><td><p>
+	keep the district field empty and click submit</p>
+</td><td><p>
+	system should display an error message</p>
+</td><td></td></tr><tr><td width="5">5</td><td><p>
+	keep the province field empty and click submit</p>
+</td><td><p>
+	keep the province field empty and click submit</p>
+</td><td></td></tr><tr><td width="5">6</td><td><p>
+	keep the country field empty and click submit</p>
+</td><td><p>
+	system should display an error message</p>
+</td><td></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td colspan="5"></td></tr><tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="4"><b>Not Run</b></td></tr>
+</table>
+</div>
+
+</body>
+</html>
