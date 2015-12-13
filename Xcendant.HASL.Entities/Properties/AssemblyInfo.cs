@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Xcendant.HASL.Logic")]
+[assembly: AssemblyTitle("Xcendant.HASL.Entities")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Xcendant.HASL.Logic")]
+[assembly: AssemblyProduct("Xcendant.HASL.Entities")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,8 +19,8 @@ using System.Runtime.InteropServices;
 // COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
-// The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("fb036b5d-b118-4819-b260-010e6a6d634a")]
+// The following GUId is for the Id of the typelib if this project is exposed to COM
+[assembly: Guid("5bf0c844-cfa5-4e87-aad1-d548127cdce0")]
 
 // Version information for an assembly consists of the following four values:
 //

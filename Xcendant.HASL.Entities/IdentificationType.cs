@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Xcendant.HASL.Logic
+namespace Xcendant.HASL.Entities
 {
-    public class Class1
+    public enum IdentificationType
     {
+        NIC=0,PASSPORT=1,OTHER=9
     }
 }

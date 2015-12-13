@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Xcendant.HASL.Logic.Tests
+namespace Xcendant.HASL.Entities
 {
-    public class Class1
+    public enum Gender
     {
+        MALE, FEMALE,OTHER
     }
 }
