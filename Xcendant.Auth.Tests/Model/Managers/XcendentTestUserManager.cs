@@ -15,12 +15,12 @@ namespace Xcendant.Auth.Tests.Model.Managers
     /// <summary>
     /// This is a fake user manger for testing purpose.This uses an in-memoery dictionary to store user.
     /// </summary>
-    class XcendentTestUserManager : AbstractXcendentUserManager<XcendentUser>
+   public class XcendentTestUserManager : AbstractXcendentUserManager<XcendentUser>
     {
         public Dictionary<string, XcendentUser> Users = new Dictionary<string, XcendentUser>();
 
-        public XcendentTestUserManager(AbstractXcendentUserStore<XcendentUser, AbstractXcendentAuthContext> store, IdentityFactoryOptions<AbstractXcendentUserManager<XcendentUser>> options)
-            : base(store)
+        public XcendentTestUserManager(IUserStore<XcendentUser> store, IdentityFactoryOptions<AbstractXcendentUserManager<XcendentUser>> options)
+            : base(store,options)
         {
             // Configure validation logic for usernames
             this.UserValidator = new UserValidator<XcendentUser>(this)

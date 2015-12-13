@@ -28,6 +28,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xcendant.Auth", "Xcendant.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xcendant.Auth.Tests", "Xcendant.Auth.Tests\Xcendant.Auth.Tests.csproj", "{EB4471A1-27FF-4AEA-AB69-0DF131939CD9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xcendant.HASL.API", "Xcendant.HASL.API\Xcendant.HASL.API.csproj", "{43442278-E76D-4B98-9243-ECC4C776B609}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xcendant.HASL.API.Tests", "Xcendant.HASL.API.Tests\Xcendant.HASL.API.Tests.csproj", "{B18FF184-003A-4E27-B670-F3615627A988}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xcendant.HASL.DataAccess", "Xcendant.HASL.DataAccess\Xcendant.HASL.DataAccess.csproj", "{0D9F95C8-9EE1-4578-8B1D-44A7CE83EA81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xcendant.HASL.Services", "Xcendant.HASL.Services\Xcendant.HASL.Services.csproj", "{C1729A63-FFC2-4CB1-A667-E46944449FF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xcendant.HASL.Services.Tests", "Xcendant.HASL.Services.Tests\Xcendant.HASL.Services.Tests.csproj", "{86CD04AB-902B-4D4B-95CD-7B667FF4B8A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xcendant.HASL.Entities", "Xcendant.HASL.Entities\Xcendant.HASL.Entities.csproj", "{5BF0C844-CFA5-4E87-AAD1-D548127CDCE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,7 +47,6 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{81EA6DD3-A21B-489B-A9F2-823608FE50B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81EA6DD3-A21B-489B-A9F2-823608FE50B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81EA6DD3-A21B-489B-A9F2-823608FE50B7}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{81EA6DD3-A21B-489B-A9F2-823608FE50B7}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{2A3C4BFC-982F-45B4-8FB1-51F40810AD9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -46,6 +57,30 @@ Global
 		{EB4471A1-27FF-4AEA-AB69-0DF131939CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB4471A1-27FF-4AEA-AB69-0DF131939CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB4471A1-27FF-4AEA-AB69-0DF131939CD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43442278-E76D-4B98-9243-ECC4C776B609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43442278-E76D-4B98-9243-ECC4C776B609}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43442278-E76D-4B98-9243-ECC4C776B609}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43442278-E76D-4B98-9243-ECC4C776B609}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B18FF184-003A-4E27-B670-F3615627A988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B18FF184-003A-4E27-B670-F3615627A988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B18FF184-003A-4E27-B670-F3615627A988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B18FF184-003A-4E27-B670-F3615627A988}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D9F95C8-9EE1-4578-8B1D-44A7CE83EA81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D9F95C8-9EE1-4578-8B1D-44A7CE83EA81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D9F95C8-9EE1-4578-8B1D-44A7CE83EA81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D9F95C8-9EE1-4578-8B1D-44A7CE83EA81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1729A63-FFC2-4CB1-A667-E46944449FF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1729A63-FFC2-4CB1-A667-E46944449FF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1729A63-FFC2-4CB1-A667-E46944449FF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1729A63-FFC2-4CB1-A667-E46944449FF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86CD04AB-902B-4D4B-95CD-7B667FF4B8A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86CD04AB-902B-4D4B-95CD-7B667FF4B8A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86CD04AB-902B-4D4B-95CD-7B667FF4B8A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86CD04AB-902B-4D4B-95CD-7B667FF4B8A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BF0C844-CFA5-4E87-AAD1-D548127CDCE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BF0C844-CFA5-4E87-AAD1-D548127CDCE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BF0C844-CFA5-4E87-AAD1-D548127CDCE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BF0C844-CFA5-4E87-AAD1-D548127CDCE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

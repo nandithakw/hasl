@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using System;
 using System.Collections.Generic;
@@ -19,34 +17,15 @@ using Xcendant.Auth.Results;
 using Xcendant.Auth.ViewModels;
 using Xcendent.Auth.ViewModels;
 using Xcendent.Auth.Extensions;
-using Autofac;
-using Autofac.Integration.Owin;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.OAuth;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using System.Web;
-using Xcendant.Auth.Models.Entities;
-using Xcendant.Auth.Models.Managers;
 namespace Xcendant.Auth.Controllers
 {
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";
-        private AbstractXcendentUserManager<XcendentUser> _userManager;
+        private AbstractXcendentUserManager<XcendentUser> userManager;
 
-        [Authorize]
-        [Route("XXX")]
-        public object Get()
-        {
-            return Ok(new { AbcVdf = "bsdjcbads" });
-        }
+        
 
         public AccountController(AbstractXcendentUserManager<XcendentUser> userManager)
         {
@@ -57,11 +36,11 @@ namespace Xcendant.Auth.Controllers
         {
             get
             {
-                return _userManager;
+                return userManager;
             }
-            private set
+            set
             {
-                _userManager = value;
+                userManager = value;
             }
         }
 
@@ -232,12 +211,21 @@ namespace Xcendant.Auth.Controllers
             return Ok();
         }
 
+        private IAuthenticationManager authentication;
 
         #region Helpers
 
-        private IAuthenticationManager Authentication
+        public IAuthenticationManager Authentication
         {
-            get { return Request.GetOwinContext().Authentication; }
+            get
+            {
+                if (authentication == null)
+                {
+                    authentication = Request.GetOwinContext().Authentication;
+                }
+                return authentication;
+            }
+            set { authentication = value; }
         }
 
         private IHttpActionResult GetErrorResult(IdentityResult result)

@@ -16,7 +16,7 @@ namespace Xcendant.Auth.Models.Managers
     public class XcendentUserManager : AbstractXcendentUserManager<XcendentUser>
     {
         public XcendentUserManager(AbstractXcendentUserStore<XcendentUser, AbstractXcendentAuthContext> store, IdentityFactoryOptions<AbstractXcendentUserManager<XcendentUser>> options)
-            : base(store)
+            : base(store,options)
         {
             // Configure validation logic for usernames
             this.UserValidator = new UserValidator<XcendentUser>(this)

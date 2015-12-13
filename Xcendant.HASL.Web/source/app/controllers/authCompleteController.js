@@ -10,6 +10,7 @@ app.controller("authCompleteCtrl", ['$scope', '$window', '$location', 'authSeriv
         authService.getExternalUserInfo(token).then(function (data) {
             $scope.userinfo = data;
             if ($scope.userinfo.hasRegistered) {
+                token.user_name = $scope.userinfo.userName;
                 authService.storeToken(token);
                 $window.location.href = '/home';
                 return false;

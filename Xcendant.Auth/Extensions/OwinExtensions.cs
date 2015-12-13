@@ -12,7 +12,7 @@ namespace Xcendent.Auth.Extensions
 {
     public static class OwinExtensions
     {
-        public static async Task<ExternalLoginInfo> GetExternalLoginInfoWithBeaerAsync(this IAuthenticationManager manager)
+        public  static async Task<ExternalLoginInfo> GetExternalLoginInfoWithBeaerAsync(this IAuthenticationManager manager)
         {
 
             ExternalLoginInfo loginInfo = null;

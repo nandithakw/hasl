@@ -17,8 +17,11 @@
         "grunt-exec": "~0.4.6",
         "grunt-karma": "~0.12.1",
         "karma": "~0.13.10",
-        "karma-jasmine": "~0.3.6"
-
+        "karma-jasmine": "~0.3.6",
+        "phantomjs": "~1.9.19",
+        "karma-phantomjs-launcher": "~0.2.1",
+        "chrome": "~0.1.0",
+        "karma-chrome-launcher": "~0.2.2"
 
     },
     "scripts": {

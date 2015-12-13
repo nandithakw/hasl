@@ -13,10 +13,9 @@
 				 'bower_components/ngstorage/ngStorage.js',
 				 'bower_components/angular-mocks/angular-mocks.js',
                  'source/app/app.js',
-                   'source/app/services/AuthService.js',
-                     'source/app/controllers/AuthController.js',
-				 'source/app/controllers/LocalSingupController.js',
-                  'test/*Spec.js',
+                 'source/app/services/*.js',
+                 'source/app/controllers/*.js',
+                 'test/*Spec.js',
         ],
         // list of files to exclude
         exclude: [

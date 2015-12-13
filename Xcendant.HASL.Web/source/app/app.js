@@ -1,5 +1,6 @@
 
-var app = angular.module('hasl', ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'ngMessages', 'ngStorage', 'auth', 'localSingup', 'authSerivces', 'authComplete', 'securedhome']);
+var app = angular.module('hasl',
+    ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'ngMessages', 'ngStorage', 'auth', 'localSingup', 'authSerivces', 'authComplete', 'securedhome', 'MemberServices','profile']);
 //angular.module('hasl', ['ui.bootstrap']);
 
 
@@ -8,9 +9,12 @@ var app = angular.module('hasl', ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'ngMes
 /**
  * Configure the Routes
  */
-app.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
+app.config(['$routeProvider', '$locationProvider', '$httpProvider', 'datepickerConfig', 'datepickerPopupConfig',
+    function ($routeProvider, $locationProvider, $httpProvider, datepickerConfig, datepickerPopupConfig) {
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('haslintercptorservice');
+    datepickerConfig.formatYear= 'yyyy';
+    datepickerConfig.startingDay= 1;
     $routeProvider
       // root
       .when("/", {
@@ -141,6 +145,10 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($r
 /*constants*/
 app.constant("authSettings", {
     authApiServiceBaseUri: 'http://localhost:57979',
+    clientId: 'haslWebApp',
+});
+app.constant("generalSettings", {
+    apiServiceBaseUri: 'http://localhost:58641',
     clientId: 'haslWebApp',
 });
 
@@ -481,7 +489,7 @@ app.factory('haslintercptorservice', function ($localStorage) {
 
 app.run(["$rootScope", "$location", function ($rootScope, $location) {
     $rootScope.$on("$routeChangeSuccess", function (event, current, previous) {
-        console.log(userInfo);
+      
     });
 
     $rootScope.$on("$routeChangeError", function (event, current, previous, eventObj) {
