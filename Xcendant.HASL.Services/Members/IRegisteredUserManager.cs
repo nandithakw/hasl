@@ -1,12 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using Xcendant.HASL.DataAccess.Members;
 using Xcendant.HASL.Entities;
 
 namespace Xcendant.HASL.Services.Members
 {
-    public interface IRegisteredUserManager
+    public interface IRegisteredUserManager : ICRUDLogicManager<RegisteredUser, IRegisteredUserFacade>
     {
-        Task<RegisteredUser> FindRegisterdUser(string userName);
-        Task<int> RegisterNewUserOrUpdateDetails(RegisteredUser registeredUser);
+
 
     }
 }

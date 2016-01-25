@@ -1,6 +1,6 @@
 
 var app = angular.module('hasl',
-    ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'ngMessages', 'ngStorage', 'auth', 'localSingup', 'authSerivces', 'authComplete', 'securedhome', 'MemberServices','profile']);
+    ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'ngMessages', 'ngStorage', 'toastr', 'ngProgress','auth', 'localSingup', 'authSerivces', 'authComplete', 'securedhome', 'MemberServices', 'profile','hasl.patient']);
 //angular.module('hasl', ['ui.bootstrap']);
 
 
@@ -9,12 +9,11 @@ var app = angular.module('hasl',
 /**
  * Configure the Routes
  */
-app.config(['$routeProvider', '$locationProvider', '$httpProvider', 'datepickerConfig', 'datepickerPopupConfig',
-    function ($routeProvider, $locationProvider, $httpProvider, datepickerConfig, datepickerPopupConfig) {
+app.config(['$routeProvider', '$locationProvider', '$httpProvider', 'uibDatepickerConfig', 'uibDatepickerPopupConfig',
+    function ($routeProvider, $locationProvider, $httpProvider,uibDatepickerConfig, uibDatepickerPopupConfig) {
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('haslintercptorservice');
-    datepickerConfig.formatYear= 'yyyy';
-    datepickerConfig.startingDay= 1;
+  //  uibDatepickerPopupConfig.datepickerPopup = "yyyy/MM/dd";
     $routeProvider
       // root
       .when("/", {
@@ -50,7 +49,7 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', 'datepickerC
           controller: "PageCtrl"
       })
 
-      .when("/complete_your_profile", {
+      .when("/complete-your-profile", {
           templateUrl: "views/complete_your_profile.html",
           controller: "PageCtrl"
       })
@@ -66,7 +65,7 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', 'datepickerC
            controller: "PageCtrl"
        })
         //doctor registration
-       .when("/doctor_registration", {
+       .when("/doctor", {
            templateUrl: "views/doctor_registration.html",
            controller: "PageCtrl"
        })
@@ -114,7 +113,7 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', 'datepickerC
        })
 
        //hospital registration
-       .when("/hospital_registration", {
+       .when("/hospital", {
            templateUrl: "views/hospital_registration.html",
            controller: "PageCtrl"
        })
@@ -141,7 +140,10 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', 'datepickerC
           controller: "PageCtrl"
 
       });
-}]);
+    }]);
+
+
+
 /*constants*/
 app.constant("authSettings", {
     authApiServiceBaseUri: 'http://localhost:57979',
@@ -150,6 +152,7 @@ app.constant("authSettings", {
 app.constant("generalSettings", {
     apiServiceBaseUri: 'http://localhost:58641',
     clientId: 'haslWebApp',
+    dateFormat: "yyyy'-'MM'-'dd"
 });
 
 /**
@@ -186,28 +189,7 @@ app.controller('NavigationBar', ['$scope', function ($scope) {
 
 }]);
 
-//angular.module('hasl').controller('DropdownCtrl', function ($scope, $log) {
-//    
-//  $scope.items = [
-//    'Change Password',
-//    'Logout'
-//
-//  ];
-//
-//  $scope.status = {
-//    isopen: false
-//  };
-//
-//  $scope.toggled = function(open) {
-//   // $log.log('Dropdown is now: ', open);
-//  };
-//
-//  $scope.toggleDropdown = function($event) {
-//    $event.preventDefault();
-//    $event.stopPropagation();
-//    $scope.status.isopen = !$scope.status.isopen;
-//  };
-//});
+
 
 
 app.controller("AssignUserRolesCtrl", function ($scope) {

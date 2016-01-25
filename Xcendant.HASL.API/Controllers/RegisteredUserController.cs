@@ -23,7 +23,7 @@ namespace Xcendant.HASL.API.Controllers
             IHttpActionResult result = null;
             try
             {
-                RegisteredUser registeredUser = await IRegisteredUserManager.FindRegisterdUser(userName);
+                RegisteredUser registeredUser = await IRegisteredUserManager.FindAsync(userName);
                 result = Ok(registeredUser);
             }
             catch (Exception ex)
@@ -41,17 +41,25 @@ namespace Xcendant.HASL.API.Controllers
             IHttpActionResult result = null;
             try
             {
-                int modifiedCount = await IRegisteredUserManager.RegisterNewUserOrUpdateDetails(user);
-                if (modifiedCount > 0)
+                if (ModelState.IsValid)
                 {
-                    result = Ok("New user registration succeded");
+                    int modifiedCount = await IRegisteredUserManager.RegisterNewOrUpdateDetailsAsync(user);
+                    if (modifiedCount > 0)
+                    {
+                        result = Ok("New user registration succeded");
 
+                    }
+                    else
+                    {
+                        result = Ok("New user registration failed.Please retry.");
+
+                    }
                 }
                 else
                 {
-                    result = Ok("New user registration failed.Please retry.");
-
+                    result = BadRequest(ModelState);
                 }
+
             }
             catch (Exception ex)
             {
@@ -68,7 +76,7 @@ namespace Xcendant.HASL.API.Controllers
             IHttpActionResult result = null;
             try
             {
-                int modifiedCount = await IRegisteredUserManager.RegisterNewUserOrUpdateDetails(user);
+                int modifiedCount = await IRegisteredUserManager.RegisterNewOrUpdateDetailsAsync(user);
                 if (modifiedCount > 0)
                 {
                     result = Ok("User details update succeded");

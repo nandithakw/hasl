@@ -18,7 +18,7 @@
 
 
         <!-- Blog Post Content Column -->
-        <form class="form-horizontal" role="form" id="patient_registration" ng-controller="ProfileController as ctrl">
+        <form class="form-horizontal" role="form" id="profile-registration" name="profileRegistration" ng-controller="ProfileController as profile">
 
             <div class="col-lg-6">
 
@@ -26,19 +26,28 @@
                 <div class="form-group">
                     <label class="control-label required-label col-sm-4" for="fname">First Name:<span class='fa fa-asterisk required-star'></span></label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control required-input" id="fname" placeholder="Enter First Name" ng-model="registeredUser.firstName">
+                        <input type="text" class="form-control required-input" id="fname" name="fname" placeholder="Enter First Name" ng-model="registeredUser.firstName" required>
+                        <div class="help-block  " ng-messages="profileRegistration.fname.$error" ng-if="profileRegistration.fname.$touched">
+                            <p ng-message="required">First Name is required.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label required-label col-sm-4" for="lname">Last Name:<span class='fa fa-asterisk required-star'></span></label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control required-input" id="lname" placeholder="Enter Last Name" ng-model="registeredUser.lastname">
+                        <input type="text" class="form-control required-input" id="lname" name="lname" placeholder="Enter Last Name" ng-model="registeredUser.lastName" required>
+                        <div class="help-block  " ng-messages="profileRegistration.lname.$error" ng-if="profileRegistration.lname.$touched">
+                            <p ng-message="required">Last Name is required.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-4  required-label" for="addressline1">Address line 01:<span class='fa fa-asterisk required-star'></span></label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control required-input" id="addressline1" placeholder="Enter Address line 01" ng-model="registeredUser.addressLine01">
+                        <input type="text" class="form-control required-input" id="addressline1" name="addressline1" placeholder="Enter Address line 01" ng-model="registeredUser.addressLine01" required>
+                        <div class="help-block  " ng-messages="profileRegistration.addressline1.$error" ng-if="profileRegistration.fname.$touched">
+                            <p ng-message="required">Address is required.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -52,7 +61,10 @@
                 <div class="form-group">
                     <label class="control-label required-label col-sm-4" for="city">City:<span class='fa fa-asterisk required-star'></span></label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control required-input" id="city" placeholder="Enter City" ng-model="registeredUser.city">
+                        <input type="text" class="form-control required-input" name="city" id="city" placeholder="Enter City" ng-model="registeredUser.city">
+                        <div class="help-block  " ng-messages="profileRegistration.city.$error" ng-if="profileRegistration.city.$touched">
+                            <p ng-message="required">City is required.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -60,12 +72,15 @@
                     <label class="control-label required-label col-sm-4" for="Province">District:<span class='fa fa-asterisk required-star'></span></label>
                     <div class="col-sm-8">
                         <select class="form-control required-input" ng-model="registeredUser.district" ng-disabled="registeredUser.country!='LK'">
-                            <option value="">Select the District</option>
+                            <option  value="" disabled selected class="hidden">Select the District</option>
                             <option value="LK-52">Ampara</option>
                             <option value="LK-71">Anuradhapura</option>
                             <option value="LK-81">Badulla</option>
 
                         </select>
+                        <div class="help-block  " ng-messages="profileRegistration.city.$error" ng-if="profileRegistration.city.$touched">
+                            <p ng-message="required">District is required.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -73,8 +88,8 @@
                     <label class="control-label required-label col-sm-4" for="province">Province:<span class='fa fa-asterisk required-star'></span></label>
                     <div class="col-sm-8">
 
-                        <select class="form-control required-input" ng-model="registeredUser.province" ng-disabled="registeredUser.country!='LK'"> 
-                            <option value="">Select the Province</option>
+                        <select class="form-control required-input" ng-model="registeredUser.province" ng-disabled="registeredUser.country!='LK'">
+                            <option value="" disabled selected class="hidden">Select the Province</option>
                             <option value="LK-2">Central Province</option>
                             <option value="LK-5">Eastern Province</option>
                             <option value="LK-7">North Central Province</option>
@@ -92,8 +107,8 @@
                     <label class="control-label required-label col-sm-4" for="country">Country:<span class='fa fa-asterisk required-star'></span></label>
                     <div class="col-sm-8">
                         <!--ISO-3366-1: Alpha-2 Codes-->
-                        <select class="form-control required-input" ng-model="registeredUser.country">
-                            <option >Select the Country</option>
+                        <select class="form-control required-input" id="country" name="country" ng-model="registeredUser.country">
+                            <option value="" disabled selected class="hidden">Select the Country</option>
                             <option value="AF">Afghanistan</option>
                             <option value="AX">Åland Islands</option>
                             <option value="AL">Albania</option>
@@ -303,7 +318,7 @@
                             <option value="GS">South Georgia and the South Sandwich Islands</option>
                             <option value="SS">South Sudan</option>
                             <option value="ES">Spain</option>
-                            <option value="LK"  ng-selected='true'>Sri Lanka</option>
+                            <option value="LK" ng-selected='true'>Sri Lanka</option>
                             <option value="SD">Sudan</option>
                             <option value="SR">Suriname</option>
                             <option value="SJ">Svalbard and Jan Mayen</option>
@@ -344,6 +359,9 @@
                             <option value="ZM">Zambia</option>
                             <option value="ZW">Zimbabwe</option>
                         </select>
+                        <div class="help-block  " ng-messages="profileRegistration.country.$error" ng-if="profileRegistration.city.$touched">
+                            <p ng-message="required">Country is required.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -378,62 +396,77 @@
                 <div class="form-group">
                     <label class="control-label required-label col-sm-4" for="mnumber">Mobile Number:<span class='fa fa-asterisk required-star'></span></label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control required-input" id="mnumber" placeholder="Enter Mobile Number" ng-model="registeredUser.mobileNumber">
+                        <input type="text" class="form-control required-input" id="mnumber" name="mnumber" placeholder="Enter Mobile Number" ng-model="registeredUser.mobileNumber" required>
+                        <div class="help-block  " ng-messages="profileRegistration.mnumber.$error" ng-if="profileRegistration.mnumber.$touched">
+                            <p ng-message="required">Mobile number is required.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label required-label col-sm-4" for="emailaddress">Email Address:<span class='fa fa-asterisk required-star'></span></label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control required-input" id="emailaddress" placeholder="Enter Email Address" ng-model="registeredUser.email" ng-readonly="!isNewUser">
+                        <input type="text" class="form-control required-input" id="emailaddress" name="emailaddress" placeholder="Enter Email Address" ng-model="registeredUser.email" ng-readonly="!isNewUser" required>
+                        <div class="help-block  " ng-messages="profileRegistration.emailaddress.$error" ng-if="profileRegistration.emailaddress.$touched">
+                            <p ng-message="required">Email address is required.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label required-label col-sm-4" for="emailaddress">Identification Type:<span class='fa fa-asterisk required-star'></span></label>
+                    <label class="control-label required-label col-sm-4" for="identificationtype">Identification Type:<span class='fa fa-asterisk required-star'></span></label>
                     <div class="col-sm-8">
 
-                        <select class="form-control required-input" ng-model="registeredUser.identificationType">
-                            <option>Select the Identification Type</option>
-                            <option value="1" >Passport</option>
-                            <option value="0">NIC</option>
+                        <select class="form-control required-input" id="identificationtype" name="identificationtype" ng-model="registeredUser.identificaionType" required>
+                            <option value="" disabled selected class="hidden">Select the Identification Type</option>
+                            <option value="PASSPORT">Passport</option>
+                            <option value="NIC">NIC</option>
 
                         </select>
-
+                        <div class="help-block  " ng-messages="profileRegistration.identificationtype.$error" ng-if="profileRegistration.identificationtype.$touched">
+                            <p ng-message="required">Identification Type  is required.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label required-label col-sm-4" for="emailaddress">Identification Number:<span class='fa fa-asterisk required-star'></span></label>
+                    <label class="control-label required-label col-sm-4" for="identificationnumber">Identification Number:<span class='fa fa-asterisk required-star'></span></label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control required-input" id="emailaddress" placeholder="Enter Identification Number" ng-model="registeredUser.identificationNumber">
+                        <input type="text" class="form-control required-input" id="identificationnumber" name="identificationnumber" placeholder="Enter Identification Number" ng-model="registeredUser.identificationNumber">
+                        <div class="help-block  " ng-messages="profileRegistration.identificationnumber.$error" ng-if="profileRegistration.identificationnumber.$touched">
+                            <p ng-message="required">Identification Number is required.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label required-label col-sm-4" for="emailaddress">Gender:<span class='fa fa-asterisk required-star'></span></label>
+                    <label class="control-label required-label col-sm-4" for="gender">Gender:<span class='fa fa-asterisk required-star'></span></label>
                     <div class="col-sm-8">
 
-                        <select class="form-control  required-input">
-                            <option>Select the Gender</option>
-                            <option>Male</option>
-                            <option>Female</option>
+                        <select class="form-control  required-input" id="gender" name="gender" ng-model="registeredUser.gender" required>
+                            <option value="" disabled selected class="hidden">Select the Gender</option>
+                            <option value="MALE">Male</option>
+                            <option value="FEMALE">Female</option>
 
                         </select>
-
+                        <div class="help-block  " ng-messages="profileRegistration.gender.$error" ng-if="profileRegistration.gender.$touched">
+                            <p ng-message="required">Gender is required.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-group" >
-                    <label class="control-label required-label col-sm-4" for="emailaddress">Date of birth:<span class='fa fa-asterisk required-star'></span></label>
+                <div class="form-group">
+                    <label class="control-label required-label col-sm-4" for="dob">Date of birth:<span class='fa fa-asterisk required-star'></span></label>
                     <div class="col-sm-8">
                         <div class="input-group">
-                            <input type="text" class="form-control targetDate  required-input" placeholder="Enter Date of birth"  ng-model="registeredUser.dateOfBirth" 
-                                   datepicker-popup="{{format}}" is-open="datePicker.status.opened"  max-date="datePicker.maxDate"  
-                                   ng-required="true" close-text="Close" ng-click="datePicker.open($event)">
+                            <input type="text" class="form-control targetDate  required-input" id="dob" name="dob" placeholder="Enter Date of birth" ng-model="registeredUser.dateOfBirth"
+                                   ng-required="true" is-open="datePicker.status.opened"  uib-datepicker-popup="{{format}}" max-date="datePicker.maxDate"
+                                       close-text="Close" ng-click="datePicker.open($event)" required>
                             <span class="input-group-addon" ng-click="datePicker.open($event)"><span class="fa fa-calendar"></span></span>
                         </div>
-
+                        <div class="help-block  " ng-messages="profileRegistration.dob.$error" ng-if="profileRegistration.dob.$touched">
+                            <p ng-message="required">Date of birth is required.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -451,8 +484,8 @@
                 <div class="form-group">
                     <div class="col-sm-12">
                         <button type="reset" class="btn btn-default pull-right">Reset</button>
-                        <button type="button" class="btn btn-primary pull-right margin-right5" ng-hide="isNewUser" ng-click="updateUser()">Update</button>
-                        <button type="button" class="btn btn-primary pull-right margin-right5" ng-show="isNewUser" ng-click="createNewUser()">Create</button>
+                        <button type="button" ng-disabled="profileRegistration.$invalid" class="btn btn-primary pull-right margin-right5" ng-hide="isNewUser" ng-click="updateUser()">Update</button>
+                        <button type="button"  class="btn btn-primary pull-right margin-right5" ng-show="isNewUser" ng-click="createNewUser()">Create</button>
 
 
                     </div>

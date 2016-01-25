@@ -7,33 +7,16 @@ using Xcendant.HASL.Entities;
 
 namespace Xcendant.HASL.Services.Members
 {
-    public class RegisteredUserManager : IRegisteredUserManager
+    public class RegisteredUserManager : AbstractCRUDLogicManager<RegisteredUser, IRegisteredUserFacade>, IRegisteredUserManager
     {
-        public IRegisteredUserFacade IRegisteredUserFacade { get; set; }
-        Func<Owned<IHaslContext>> IHaslContext { get; set; }
 
-        public RegisteredUserManager(Func<Owned<IHaslContext>> iHaslContext, IRegisteredUserFacade iRegisterdMembersFacade)
+        public RegisteredUserManager(Func<Owned<IHaslContext>> iHaslContext, IRegisteredUserFacade iRegisterdMembersFacade) : base(iHaslContext, iRegisterdMembersFacade)
         {
-            IHaslContext = iHaslContext;
-            IRegisteredUserFacade = iRegisterdMembersFacade;
+
         }
 
 
-
-        public async Task<RegisteredUser> FindRegisterdUser(string userName)
-        {
-            RegisteredUser registeredUser = null;
-            using (var iHaslContext = IHaslContext())
-            {
-                registeredUser = await IRegisteredUserFacade.GetUserDetails(iHaslContext.Value, userName);
-            }
-
-
-            return registeredUser;
-
-        }
-
-        public async Task<int> RegisterNewUserOrUpdateDetails(RegisteredUser registeredUser)
+        public override async Task<int> RegisterNewOrUpdateDetailsAsync(RegisteredUser registeredUser)
         {
             int modifiedCount = -1;
             if (!"LK".Equals(registeredUser.Country))
@@ -42,12 +25,12 @@ namespace Xcendant.HASL.Services.Members
                 registeredUser.Province = null;
             }
             registeredUser.DateOfBirth = registeredUser.DateOfBirth.Date;
-            using (var iHaslContext = IHaslContext())
+            using (var iHaslContext = this.iHaslContext())
             {
-                RegisteredUser user = await IRegisteredUserFacade.GetUserDetails(iHaslContext.Value, registeredUser.Email);
+                RegisteredUser user = await iEntityFacade.GetDetails(iHaslContext.Value, registeredUser.Email);
                 if (user == null)
                 {
-                    modifiedCount = await IRegisteredUserFacade.RegisterNewUserDetails(iHaslContext.Value, registeredUser);
+                    modifiedCount = await iEntityFacade.AddNew(iHaslContext.Value, registeredUser);
 
                 }
                 else
@@ -68,7 +51,7 @@ namespace Xcendant.HASL.Services.Members
                     user.Gender = registeredUser.Gender;
                     user.DateOfBirth = registeredUser.DateOfBirth;
 
-                    modifiedCount = await IRegisteredUserFacade.UpdateUserDetails(iHaslContext.Value, user);
+                    modifiedCount = await iEntityFacade.UpdateAsync(iHaslContext.Value, user);
 
                 }
             }

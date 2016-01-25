@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Threading;
 using System.Threading.Tasks;
@@ -10,7 +11,13 @@ namespace Xcendant.HASL.DataAccess
     {
         DbSet<RegisteredUser> RegisteredUsers { get; set; }
         DbSet<Hospital> Hospitals { get; set; }
+        DbSet<CareGiver> CareGivers { get; set; }
+        DbSet<Doctor> Doctors { get; set; }
+        DbSet<TreatmentCenter> TreatmentCenters { get; set; }
 
+        DbSet<TEntity> Set<TEntity>() where TEntity : class;
+        DbSet Set(Type entityType);
+        Database Database { get; }
 
 
         void Dispose();

@@ -7,46 +7,33 @@ using Xcendant.HASL.Entities;
 
 namespace Xcendant.HASL.Services.Hospitals
 {
-    public class HospitalManager : IHospitalManager
+    public class HospitalManager : AbstractCRUDLogicManager<Hospital, IHospitalFacade>, IHospitalManager
     {
-        public IHospitalFacade IHospitalFacade { get; set; }
-        Func<Owned<IHaslContext>> IHaslContext { get; set; }
+
 
         public HospitalManager(Func<Owned<IHaslContext>> iHaslContext, IHospitalFacade iHospitalFacade)
+            : base(iHaslContext, iHospitalFacade)
         {
-            IHaslContext = iHaslContext;
-            IHospitalFacade = iHospitalFacade;
+
         }
 
 
 
-        public async Task<Hospital> FindRegisterdHospital(string userName)
-        {
-            Hospital registeredHospital = null;
-            using (var iHaslContext = IHaslContext())
-            {
-                registeredHospital = await IHospitalFacade.GetHospitalDetails(iHaslContext.Value, userName);
-            }
 
-
-            return registeredHospital;
-
-        }
-
-        public async Task<int> RegisterNewHospitalOrUpdateDetails(Hospital registeredHospital)
+        public async Task<int> RegisterNewOrUpdateDetailsAsync(Hospital registeredHospital)
         {
             int modifiedCount = -1;
-            using (var iHaslContext = IHaslContext())
+            using (var ctx = iHaslContext())
             {
-                Hospital user = await IHospitalFacade.GetHospitalDetails(iHaslContext.Value, registeredHospital.Email);
+                Hospital user = await iEntityFacade.GetDetails(ctx.Value, registeredHospital.Email);
                 if (user == null)
                 {
-                    modifiedCount = await IHospitalFacade.RegisterNewHospital(iHaslContext.Value, registeredHospital);
+                    modifiedCount = await iEntityFacade.AddNew(ctx.Value, registeredHospital);
 
                 }
                 else
                 {
-                    modifiedCount = await IHospitalFacade.UpdateHospital(iHaslContext.Value, registeredHospital);
+                    modifiedCount = await iEntityFacade.UpdateAsync(ctx.Value, registeredHospital);
 
                 }
             }

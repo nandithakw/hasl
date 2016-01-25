@@ -44,11 +44,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractCRUDLogicManager.cs" />
+    <Compile Include="CareGivers\CareGiverManager.cs" />
+    <Compile Include="CareGivers\ICareGiverManager.cs" />
+    <Compile Include="Doctors\DoctorManager.cs" />
+    <Compile Include="Doctors\IDoctorManager.cs" />
     <Compile Include="Hospitals\HospitalManager.cs" />
     <Compile Include="Hospitals\IHospitalManager.cs" />
+    <Compile Include="ICRUDLogicManager.cs" />
     <Compile Include="Members\IRegisteredUserManager.cs" />
     <Compile Include="Members\RegisteredUserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TreatmentCenters\ITreatmentCenterManager.cs" />
+    <Compile Include="TreatmentCenters\TreatmentCenterManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xcendant.HASL.DataAccess\Xcendant.HASL.DataAccess.csproj">

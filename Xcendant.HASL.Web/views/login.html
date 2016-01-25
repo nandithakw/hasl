@@ -15,10 +15,10 @@
         <!-- Blog Sidebar Widgets Column -->
         <div class="col-md-4">
             <!-- Blog Search Well -->
-            <div class="well login" ng-controller="authCtrl">
+            <div class="well login" ng-controller="AuthController as auth">
                 <h3>Login</h3>
 
-                <form name="loginForm" required>
+                <form name="loginForm" required >
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address<span class='fa fa-asterisk required-star'></span></label>
                         <input type="email" name="email" class="form-control required-input" id="exampleInputEmail1" placeholder="Email" ng-model="localLoginData.userName" required />
@@ -27,7 +27,7 @@
                             <p class="validation-text" ng-message="email">This needs to be a valid email</p>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group"> 
                         <label for="exampleInputPassword1">Password<span class='fa fa-asterisk required-star'></span></label>
                         <input type="password" name="password" class="form-control required-input" id="exampleInputPassword1" placeholder="Password" ng-model="localLoginData.password" required>
                         <div ng-messages="loginForm.password.$error" ng-if="loginForm.password.$touched">
@@ -40,7 +40,7 @@
                     <p class="validation-text" ng-show="loginFailed">Login Failed!.Provided user name or password is not valid.</p>
 
 
-                    <div ng-controller="ModalDemoCtrl">
+                    <!--<div ng-controller="ModalDemoCtrl">
                         <script type="text/ng-template" id="myModalContent.html">
                             <div class="modal-header">
                                 <h4 class="modal-title">Request for New Password</h4>
@@ -59,12 +59,12 @@
                         <a href="" class="signup-link" ng-click="open()">Fogot Password ? </a>
 
 
-                    </div>
+                    </div>-->
 
 
 
-                    <button class="btn btn-primary" ng-disabled="loginForm.email.$dirty && loginForm.email.$invalid ||
-loginForm.password.$dirty && loginForm.password.$invalid" ng-click="localSignIn(localLoginData)">
+                    <button class="btn btn-primary" ng-disabled="(isBusy) ||(loginForm.email.$dirty && loginForm.email.$invalid) ||
+(loginForm.password.$dirty && loginForm.password.$invalid)" ng-click="localSignIn(localLoginData)" >
                         Sign in
                     </button>
                 </form>
@@ -75,7 +75,7 @@ loginForm.password.$dirty && loginForm.password.$invalid" ng-click="localSignIn(
                     <h4>Sign in Social media</h4>
                     <div class="clearfix"></div>
                     <a href ng-click="exteranlSignIn('Facebook')"> <i class="fa fa-facebook-square fa-2 facebook-blue"></i></a>
-                    <a href ng-click="exteranlSignIn('Google')"><i class="fa fa-google-plus-square fa-2 google-plus-red"></i></a>
+                    <a href ng-click="exteranlSignIn('Google')"  ng-disabled="isBusy"><i class="fa fa-google-plus-square fa-2 google-plus-red"></i></a>
                     <!--<a href="#"> <i class="fa  fa-twitter-square fa-2 twitter-blue"></i></a>-->
 
 

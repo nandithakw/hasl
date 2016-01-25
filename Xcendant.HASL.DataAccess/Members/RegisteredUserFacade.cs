@@ -5,28 +5,19 @@ using Xcendant.HASL.Entities;
 
 namespace Xcendant.HASL.DataAccess.Members
 {
-    public class RegisteredUserFacade : IRegisteredUserFacade
+    public class RegisteredUserFacade : AbstractGenericFacade<RegisteredUser>, IRegisteredUserFacade
     {
-        public async Task<RegisteredUser> GetUserDetails(IHaslContext iHaslContext, string email)
+        public override async Task<RegisteredUser> GetDetails<U>(IHaslContext iHaslContext, U key)
         {
             var registerdUser = await (from x in iHaslContext.RegisteredUsers
-                                       .Include("ProfileImage")
-                                       where email.Equals(x.Email)
-                                       select x).FirstOrDefaultAsync<RegisteredUser>();
+                                      .Include("ProfileImage")
+                                       where key.Equals(x.Email)
+                                       select x).AsNoTracking().FirstOrDefaultAsync<RegisteredUser>();
             return registerdUser;
         }
 
-        public async Task<int> RegisterNewUserDetails(IHaslContext iHaslContext, RegisteredUser userDetails)
-        {
-            iHaslContext.RegisteredUsers.Add(userDetails);
-            iHaslContext.Entry(userDetails).State = EntityState.Added;
-            return await iHaslContext.SaveChangesAsync();
-        }
 
-        public async Task<int> UpdateUserDetails(IHaslContext iHaslContext, RegisteredUser userDetails)
-        {
-            iHaslContext.Entry(userDetails).State = EntityState.Modified;
-            return await iHaslContext.SaveChangesAsync();
-        }
+
+
     }
 }

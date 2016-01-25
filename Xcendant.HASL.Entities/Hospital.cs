@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Xcendant.HASL.Entities
 {
     public class Hospital
     {
         public int Id { get; set; }
-        public string HospitalId { get { return String.Format("HT{0:0000}",Id); } }
+        public string HospitalId { get { return String.Format("HT{0:0000}", Id); } }
         public string Name { get; set; }
         public string AdressLine01 { get; set; }
         public string AddressLine02 { get; set; }
@@ -18,5 +15,8 @@ namespace Xcendant.HASL.Entities
         public string Province { get; set; }
         public string Telephone { get; set; }
         public string Email { get; set; }
+        public virtual ICollection<Patient> Patients { get; set; }
+
+
     }
 }

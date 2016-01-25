@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
+using Xcendant.HASL.Entities.Converters;
 
 namespace Xcendant.HASL.Entities
 {
@@ -37,8 +39,12 @@ namespace Xcendant.HASL.Entities
         [Required]
         public Gender Gender { get; set; }
         [Required]
+        [JsonConverter(typeof(ISO8601CalendarDateConverter))]
         public DateTime DateOfBirth { get; set; }
 
+        public virtual Doctor Doctor { get; set; }
         public virtual ProfileImage ProfileImage { get; set; }
+
+        public virtual CareGiver CareGiver { get; set; }
     }
 }

@@ -23,7 +23,7 @@ namespace Xcendant.HASL.API.Tests
             autoFacBuilder.Register(c =>
             {
                 var iRegisteredUserManager = Substitute.For<RegisteredUserManager>();
-                iRegisteredUserManager.FindRegisterdUser(Arg.Any<string>()).Returns<RegisteredUser>(new RegisteredUser { Email = "professorX@smen.com" });
+                iRegisteredUserManager.FindAsync(Arg.Any<string>()).Returns<RegisteredUser>(new RegisteredUser { Email = "professorX@smen.com" });
                 return iRegisteredUserManager;
             }).InstancePerDependency();
             autoFacBuilder.RegisterType<RegisteredUserManager>().As<RegisteredUserManager>().InstancePerDependency();
@@ -54,7 +54,7 @@ namespace Xcendant.HASL.API.Tests
             autoFacBuilder.Register(c =>
             {
                 var iRegisteredUserManager = Substitute.For<RegisteredUserManager>();
-                iRegisteredUserManager.RegisterNewUserOrUpdateDetails(Arg.Any<RegisteredUser>()).Returns<int>(1);
+                iRegisteredUserManager.RegisterNewOrUpdateDetailsAsync(Arg.Any<RegisteredUser>()).Returns<int>(1);
                 return iRegisteredUserManager;
             }).InstancePerDependency();
             autoFacBuilder.RegisterType<RegisteredUserManager>().As<RegisteredUserManager>().InstancePerDependency();
@@ -86,7 +86,7 @@ namespace Xcendant.HASL.API.Tests
             autoFacBuilder.Register(c =>
             {
                 var iRegisteredUserManager = Substitute.For<RegisteredUserManager>();
-                iRegisteredUserManager.RegisterNewUserOrUpdateDetails(Arg.Any<RegisteredUser>()).Returns<int>(1);
+                iRegisteredUserManager.RegisterNewOrUpdateDetailsAsync(Arg.Any<RegisteredUser>()).Returns<int>(1);
                 return iRegisteredUserManager;
             }).InstancePerDependency();
             autoFacBuilder.RegisterType<RegisteredUserManager>().As<RegisteredUserManager>().InstancePerDependency();

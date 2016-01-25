@@ -14,7 +14,7 @@
             
           
             <!-- Blog Post Content Column -->
-            <form class="form-horizontal" role="form" id="patient_registration">
+            <form class="form-horizontal" role="form" id="patient_registration" ng-controller="PatientController as patientCtrl">
             
             
             <div class="col-lg-12">
@@ -43,10 +43,10 @@
                     <label class="control-label required-label col-sm-4" for="typeofHe">Type of Hemophilia:<span class='fa fa-asterisk required-star'></span></label>
                     <div class="col-sm-8">
                       
-                      <select class="form-control required-input">
-                           <option>Select the type of Hemophilia</option>
-                           <option>Type A</option>
-                           <option>Type B</option>
+                      <select class="form-control required-input" ng-model="patient.hemophiliaType">
+                           <option value="" disabled selected class="hidden">Select the type of Hemophilia</option>
+                           <option value="A">Type A</option>
+                           <option value="B">Type B</option>
                          
                        </select>
                        
@@ -62,11 +62,11 @@
                     <label class="control-label required-label col-sm-4" for="severity">Severity:<span class='fa fa-asterisk required-star'></span></label>
                     <div class="col-sm-8">
                       
-                      <select class="form-control required-input">
-                           <option>Select the Severity</option>
-                           <option>Mild</option>
-                           <option>Moderate</option>
-                           <option>Servere</option>
+                      <select class="form-control required-input" ng-model="patient.hemophiliaServity">
+                           <option value="" disabled selected class="hidden">Select the Severity</option>
+                           <option value="MILD">Mild</option>
+                           <option value="MODERATE">Moderate</option>
+                           <option value="SEVERE">Servere</option>
                        </select>
                        
                     </div>
@@ -94,7 +94,7 @@
                     <div class="col-sm-8">
                       
                       <select class="form-control" id="Preferred-doctor">
-                           <option>Select the Doctor</option>
+                           <option value="" disabled selected class="hidden">Select the Doctor</option>
                            <option>Doctor1</option>
                            <option>Doctor2</option>
                            <option>Other</option>
@@ -104,33 +104,14 @@
                     </div>
                   </div>
                   
-                  <div id="other" style="display:none;">
-                  <div class="form-group">
-                    <label class="control-label col-sm-4" for="typeofHe">Name:</label>
-                    <div class="col-sm-8">
-                      
-                      <input type="text" class="form-control" placeholder="Enter Name">
-                       
-                    </div>
-                  </div>
-                  
-                  <div class="form-group">
-                    <label class="control-label col-sm-4" for="typeofHe">Telephone Number:</label>
-                    <div class="col-sm-8">
-                      
-                      <input type="text" class="form-control" placeholder="Enter Telephone Number">
-                       
-                    </div>
-                  </div>
-                  
-                </div>
+                
                   
                   <div class="form-group">
                     <label class="control-label col-sm-4" for="typeofHe">Hospital:</label>
                     <div class="col-sm-8">
                       
                       <select class="form-control">
-                           <option>Select the Hospital</option>
+                           <option  value="" disabled selected class="hidden">Select the Hospital</option>
                            <option>Hospital1</option>
                            <option>Hospital2</option>
                          
@@ -149,7 +130,7 @@
                     <div class="col-sm-8">
                       
                       <select class="form-control">
-                           <option>Select the Caretacker</option>
+                           <option value="" disabled selected class="hidden">Select the Caretacker</optionvalue="">
                            <option>Mild</option>
                            <option>Moderate</option>
                            <option>Servere</option>
@@ -163,7 +144,7 @@
                     <div class="col-sm-8">
                       
                       <select class="form-control required-input">
-                           <option>Select the Treatment center</option>
+                           <option value="" disabled selected class="hidden">Select the Treatment center</option>
                            <option>Treatment center1</option>
                            <option>Treatment center2</option>
                          

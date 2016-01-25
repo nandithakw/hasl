@@ -1,6 +1,6 @@
 ﻿'use strict'
-var app = angular.module('MemberServices', []);
-app.factory('MemberDetailServices', ['$http', '$q', 'generalSettings', function ($http, $q, generalSettings) {
+var app = angular.module('MemberServices', ['ui.bootstrap']);
+app.factory('MemberDetailServices', ['$http', '$q', 'generalSettings', function ($http, $q,  generalSettings) {
     var memberDetailsServiceFactory = {};
 
     var getUserProfile = function (userName) {
@@ -29,7 +29,7 @@ app.factory('MemberDetailServices', ['$http', '$q', 'generalSettings', function 
 
     var updateUserProfile = function (userDetail) {
         return $q(function (resolve, reject) {
-            var mesasge;
+            var message;
             $http.put(generalSettings.apiServiceBaseUri + "/api/registereduser/" + userDetail.email + "/", userDetail).then(function (response) {
                 message = response.data;
                 resolve(message);

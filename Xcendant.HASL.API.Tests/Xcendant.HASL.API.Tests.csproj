@@ -39,17 +39,17 @@
       <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="AutofacContrib.NSubstitute, Version=3.3.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutofacContrib.NSubstitute.3.3.5\lib\NET40\AutofacContrib.NSubstitute.dll</HintPath>
+    <Reference Include="AutofacContrib.NSubstitute, Version=3.3.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutofacContrib.NSubstitute.3.3.6\lib\NET40\AutofacContrib.NSubstitute.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Owin, Version=2.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.2.0.2\lib\net45\Microsoft.Owin.dll</HintPath>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NSubstitute, Version=1.9.2.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
@@ -114,6 +114,10 @@
     <ProjectReference Include="..\Xcendant.HASL.API\Xcendant.HASL.API.csproj">
       <Project>{43442278-e76d-4b98-9243-ecc4c776b609}</Project>
       <Name>Xcendant.HASL.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xcendant.HASL.DataAccess\Xcendant.HASL.DataAccess.csproj">
+      <Project>{0d9f95c8-9ee1-4578-8b1d-44a7ce83ea81}</Project>
+      <Name>Xcendant.HASL.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\Xcendant.HASL.Entities\Xcendant.HASL.Entities.csproj">
       <Project>{5bf0c844-cfa5-4e87-aad1-d548127cdce0}</Project>

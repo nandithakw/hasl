@@ -1,7 +1,7 @@
-﻿var app = angular.module('securedhome', ['authSerivces', 'MemberServices', 'ngStorage']);
+﻿var app = angular.module('securedhome', ['authSerivces', 'MemberServices', 'ngStorage','toastr']);
 
-app.controller("SecuredHomeCtrl", ['$scope', '$window', '$location', 'authSerivce', 'authSettings', 'MemberDetailServices', 'generalSettings',
-    function ($scope, $window, $location, authService, authSettings, MemberDetailServices, generalSettings) {
+app.controller("SecuredHomeCtrl", ['$scope', '$window', '$location','toastr', 'authSerivce', 'authSettings', 'MemberDetailServices', 'generalSettings',
+    function ($scope, $window, $location,toastr, authService, authSettings, MemberDetailServices, generalSettings) {
         $scope.loggedInUser;
         $scope.registeredUser;
         function init() {
@@ -13,7 +13,8 @@ app.controller("SecuredHomeCtrl", ['$scope', '$window', '$location', 'authSerivc
                     }
                     return MemberDetailServices.getUserProfile($scope.loggedInUser.email);
                 } else {
-                    console.error("unable to retive logged in userdata");
+                    console.error("unable to retrieve logged in user data");
+                    toastr.error("Unable to retrieve logged in user data.Please try reloading page", "Unable to retrieve logged in user data")
                     return false;
                 }
 
@@ -22,11 +23,12 @@ app.controller("SecuredHomeCtrl", ['$scope', '$window', '$location', 'authSerivc
                     $scope.registeredUser = data;
                     $scope.loggedInUser.registeredName = $scope.registeredUser.firstName + ' ' + $scope.registeredUser.lastName;
                 } else {
-
+                    toastr.info("Please complete your profile", "Redirecting to profile page");
                     $window.location.href = '/profile';
                     return false;
                 }
             }, function (error) {
+                toastr.error("Unable to retrieve user profile.Please try reloading page","Unable to retrieve user profile data")
                 console.log(error);
             });
 

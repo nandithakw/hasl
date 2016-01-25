@@ -7,7 +7,7 @@ using Xcendant.HASL.Entities;
 using Xcendant.HASL.Services.Members;
 using Xunit;
 
-namespace Xcendant.HASL.Services.Tests
+namespace Xcendant.HASL.Services.Tests.Members
 {
     public class RegisteredUserManagerTests
     {
@@ -24,8 +24,8 @@ namespace Xcendant.HASL.Services.Tests
             autoFacBuilder.Register(c =>
             {
                 var iRegisteredUserFacade = Substitute.For<IRegisteredUserFacade>();
-                iRegisteredUserFacade.GetUserDetails(Arg.Any<IHaslContext>(), Arg.Any<string>()).Returns((RegisteredUser)null);
-                iRegisteredUserFacade.RegisterNewUserDetails(Arg.Any<IHaslContext>(), Arg.Any<RegisteredUser>()).Returns(1);
+                iRegisteredUserFacade.GetDetails(Arg.Any<IHaslContext>(), Arg.Any<string>()).Returns((RegisteredUser)null);
+                iRegisteredUserFacade.AddNew(Arg.Any<IHaslContext>(), Arg.Any<RegisteredUser>()).Returns(1);
 
                 return iRegisteredUserFacade;
             }).InstancePerDependency();
@@ -34,7 +34,7 @@ namespace Xcendant.HASL.Services.Tests
 
             IContainer iContainer = autoFacBuilder.Build();
             var iRegisteredUserManager = iContainer.Resolve<IRegisteredUserManager>();
-            var modifiedCount = await iRegisteredUserManager.RegisterNewUserOrUpdateDetails(new RegisteredUser()
+            var modifiedCount = await iRegisteredUserManager.RegisterNewOrUpdateDetailsAsync(new RegisteredUser()
             {
                 FirstName = "James",
                 LastName = "McAvoy",
@@ -56,8 +56,8 @@ namespace Xcendant.HASL.Services.Tests
             autoFacBuilder.Register(c =>
             {
                 var iRegisteredUserFacade = Substitute.For<IRegisteredUserFacade>();
-                iRegisteredUserFacade.GetUserDetails(Arg.Any<IHaslContext>(), Arg.Any<string>()).Returns(new RegisteredUser { Id = 5 });
-                iRegisteredUserFacade.UpdateUserDetails(Arg.Any<IHaslContext>(), Arg.Any<RegisteredUser>()).Returns(1);
+                iRegisteredUserFacade.GetDetails(Arg.Any<IHaslContext>(), Arg.Any<string>()).Returns(new RegisteredUser { Id = 5 });
+                iRegisteredUserFacade.UpdateAsync(Arg.Any<IHaslContext>(), Arg.Any<RegisteredUser>()).Returns(1);
 
                 return iRegisteredUserFacade;
             }).InstancePerDependency();
@@ -66,7 +66,7 @@ namespace Xcendant.HASL.Services.Tests
 
             IContainer iContainer = autoFacBuilder.Build();
             var iRegisteredUserManager = iContainer.Resolve<IRegisteredUserManager>();
-            var modifiedCount = await iRegisteredUserManager.RegisterNewUserOrUpdateDetails(new RegisteredUser()
+            var modifiedCount = await iRegisteredUserManager.RegisterNewOrUpdateDetailsAsync(new RegisteredUser()
             {
                 Id = 5,
                 FirstName = "James",
@@ -88,7 +88,7 @@ namespace Xcendant.HASL.Services.Tests
             autoFacBuilder.Register(c =>
             {
                 var iRegisteredUserFacade = Substitute.For<IRegisteredUserFacade>();
-                iRegisteredUserFacade.GetUserDetails(Arg.Any<IHaslContext>(), Arg.Any<string>())
+                iRegisteredUserFacade.GetDetails(Arg.Any<IHaslContext>(), Arg.Any<string>())
                 .Returns(new RegisteredUser
                 {
                     Id = 5,
@@ -104,7 +104,7 @@ namespace Xcendant.HASL.Services.Tests
 
             IContainer iContainer = autoFacBuilder.Build();
             var iRegisteredUserManager = iContainer.Resolve<IRegisteredUserManager>();
-            var registeredUser = await iRegisteredUserManager.FindRegisterdUser("professorX@xmen.com");
+            var registeredUser = await iRegisteredUserManager.FindAsync("professorX@xmen.com");
             Assert.NotNull(registeredUser);
             Assert.Equal<int>(5, registeredUser.Id);
         }

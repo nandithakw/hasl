@@ -6,6 +6,7 @@ using Xcendant.HASL.Services.Hospitals;
 
 namespace Xcendant.HASL.API.Controllers
 {
+    [RoutePrefix("api/Hospitals")]
     public class HospitalController : ApiController
     {
         public IHospitalManager IHospitalManager { get; private set; }
@@ -13,6 +14,23 @@ namespace Xcendant.HASL.API.Controllers
         public HospitalController(IHospitalManager iHospitalManager)
         {
             IHospitalManager = iHospitalManager;
+        }
+
+        [HttpGet]
+        public async Task<IHttpActionResult> GetAllAsync()
+        {
+            IHttpActionResult result = null;
+            try
+            {
+                var hospitals = await IHospitalManager.GetAllAsync();
+                result = Ok(hospitals);
+            }
+            catch (System.Exception ex)
+            {
+                result = InternalServerError(ex);
+                throw;
+            }
+            return result;
         }
 
         [HttpPost]
@@ -23,7 +41,7 @@ namespace Xcendant.HASL.API.Controllers
             IHttpActionResult result = null;
             try
             {
-                Hospital registeredHospital = await IHospitalManager.FindRegisterdHospital(userName);
+                Hospital registeredHospital = await IHospitalManager.FindAsync(userName);
                 result = Ok(registeredHospital);
             }
             catch (Exception ex)
@@ -41,7 +59,7 @@ namespace Xcendant.HASL.API.Controllers
             IHttpActionResult result = null;
             try
             {
-                int modifiedCount = await IHospitalManager.RegisterNewHospitalOrUpdateDetails(user);
+                int modifiedCount = await IHospitalManager.RegisterNewOrUpdateDetailsAsync(user);
                 if (modifiedCount > 0)
                 {
                     result = Ok("New user registration succeded");
@@ -68,7 +86,7 @@ namespace Xcendant.HASL.API.Controllers
             IHttpActionResult result = null;
             try
             {
-                int modifiedCount = await IHospitalManager.RegisterNewHospitalOrUpdateDetails(user);
+                int modifiedCount = await IHospitalManager.RegisterNewOrUpdateDetailsAsync(user);
                 if (modifiedCount > 0)
                 {
                     result = Ok("Hospital details update succeded");
