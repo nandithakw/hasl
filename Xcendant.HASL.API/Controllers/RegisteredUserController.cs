@@ -15,9 +15,8 @@ namespace Xcendant.HASL.API.Controllers
             IRegisteredUserManager = iRegisteredUserManager;
         }
 
-        [HttpGet]
         [Route("{userName}")]
-        public async Task<IHttpActionResult> GetUserDetails(string userName)
+        public async Task<IHttpActionResult> GetAsync(string userName)
         {
 
             IHttpActionResult result = null;
@@ -33,9 +32,8 @@ namespace Xcendant.HASL.API.Controllers
             return result;
         }
 
-        [HttpPost]
         [Route("{email}")]
-        public async Task<IHttpActionResult> RegisterNewUser(RegisteredUser user)
+        public async Task<IHttpActionResult> PostAsync(RegisteredUser user)
         {
 
             IHttpActionResult result = null;
@@ -68,9 +66,8 @@ namespace Xcendant.HASL.API.Controllers
             return result;
         }
 
-        [HttpPut]
         [Route("{email}")]
-        public async Task<IHttpActionResult> UpdateRegisteredUser(RegisteredUser user)
+        public async Task<IHttpActionResult> PutAsync(RegisteredUser user)
         {
 
             IHttpActionResult result = null;

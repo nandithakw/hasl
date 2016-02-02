@@ -15,6 +15,7 @@ namespace Xcendant.HASL.DataAccess
         public DbSet<CareGiver> CareGivers { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<TreatmentCenter> TreatmentCenters { get; set; }
+        DbSet<Patient> Patients { get; set; }
 
 
 

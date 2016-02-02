@@ -71,8 +71,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CareGivers\CareGiverManagarTests.cs" />
+    <Compile Include="Doctors\DoctorManagerTests.cs" />
+    <Compile Include="Hospitals\HospitalManagerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Members\RegisteredUserManagerTests.cs" />
+    <Compile Include="TreatmentCenters\TreatmentCenterManagerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

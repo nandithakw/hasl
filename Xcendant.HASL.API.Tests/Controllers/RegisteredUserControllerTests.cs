@@ -4,12 +4,11 @@ using System.Web.Http;
 using System.Web.Http.Results;
 using Autofac;
 using NSubstitute;
-using Xcendant.HASL.API.Controllers;
 using Xcendant.HASL.Entities;
 using Xcendant.HASL.Services.Members;
 using Xunit;
 
-namespace Xcendant.HASL.API.Tests
+namespace Xcendant.HASL.API.Controllers.Tests
 {
     public class RegisteredUserControllerTests
     {
@@ -35,7 +34,7 @@ namespace Xcendant.HASL.API.Tests
             controller.Request = new HttpRequestMessage();
             controller.Configuration = new HttpConfiguration();
 
-            IHttpActionResult actionResult = await controller.GetUserDetails("professorX@smen.com");
+            IHttpActionResult actionResult = await controller.Get("professorX@smen.com");
 
             var contentResult = actionResult as OkNegotiatedContentResult<RegisteredUser>;
             Assert.NotNull(contentResult);
@@ -66,7 +65,7 @@ namespace Xcendant.HASL.API.Tests
             controller.Request = new HttpRequestMessage();
             controller.Configuration = new HttpConfiguration();
 
-            IHttpActionResult actionResult = await controller.RegisterNewUser(new RegisteredUser());
+            IHttpActionResult actionResult = await controller.Post(new RegisteredUser());
 
             var contentResult = actionResult as OkNegotiatedContentResult<string>;
             Assert.NotNull(contentResult);
@@ -98,7 +97,7 @@ namespace Xcendant.HASL.API.Tests
             controller.Request = new HttpRequestMessage();
             controller.Configuration = new HttpConfiguration();
 
-            IHttpActionResult actionResult = await controller.UpdateRegisteredUser(new RegisteredUser());
+            IHttpActionResult actionResult = await controller.Put(new RegisteredUser());
 
             var contentResult = actionResult as OkNegotiatedContentResult<string>;
             Assert.NotNull(contentResult);

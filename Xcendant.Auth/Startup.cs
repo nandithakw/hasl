@@ -1,15 +1,9 @@
-﻿using Microsoft.Owin;
-using Owin;
+﻿using System.Reflection;
 using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
-using System.Reflection;
-using Xcendant.Auth.Models.Managers;
-using Xcendant.Auth.Models.DAL;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Xcendant.Auth.Models.Entities;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.AspNet.Identity;
+using Microsoft.Owin;
+using Owin;
 
 [assembly: OwinStartup(typeof(Xcendant.Auth.Startup))]
 

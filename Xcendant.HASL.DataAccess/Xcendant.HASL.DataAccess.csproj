@@ -70,6 +70,8 @@
       <DependentUpon>201601240842160_initial2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Patients\IPatientFacade.cs" />
+    <Compile Include="Patients\PatientFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TreatmentCenters\ITreatmentCenterFacade.cs" />
     <Compile Include="TreatmentCenters\TreatmentCenterFacade.cs" />

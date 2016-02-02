@@ -13,7 +13,10 @@ namespace Xcendant.HASL.DataAccess
         DbSet<Hospital> Hospitals { get; set; }
         DbSet<CareGiver> CareGivers { get; set; }
         DbSet<Doctor> Doctors { get; set; }
+        DbSet<Patient> Patients { get; set; }
+
         DbSet<TreatmentCenter> TreatmentCenters { get; set; }
+
 
         DbSet<TEntity> Set<TEntity>() where TEntity : class;
         DbSet Set(Type entityType);
