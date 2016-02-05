@@ -35,7 +35,7 @@ namespace Xcendant.HASL.Services.Tests.CareGivers
             var iCurdLogicManager = iContainer.Resolve<ICareGiverManager>();
             var modifiedCount = await iCurdLogicManager.RegisterNewOrUpdateDetailsAsync(new Entities.CareGiver()
             {
-                Id = 1,
+                RegisteredUserId = 1,
                 Description = "Test Caregiver",
             });
             Assert.Equal<int>(1, modifiedCount);
@@ -54,7 +54,7 @@ namespace Xcendant.HASL.Services.Tests.CareGivers
             autoFacBuilder.Register(c =>
             {
                 var iEntityFacade = Substitute.For<ICareGiverFacade>();
-                iEntityFacade.GetDetails(Arg.Any<IHaslContext>(), Arg.Any<string>()).Returns(new CareGiver { Id = 5 });
+                iEntityFacade.GetDetails(Arg.Any<IHaslContext>(), Arg.Any<string>()).Returns(new CareGiver { RegisteredUserId = 5 });
                 iEntityFacade.UpdateAsync(Arg.Any<IHaslContext>(), Arg.Any<CareGiver>()).Returns(1);
 
                 return iEntityFacade;
@@ -66,7 +66,7 @@ namespace Xcendant.HASL.Services.Tests.CareGivers
             var iCurdLogicManager = iContainer.Resolve<ICareGiverManager>();
             var modifiedCount = await iCurdLogicManager.RegisterNewOrUpdateDetailsAsync(new CareGiver()
             {
-                Id = 5,
+                RegisteredUserId = 5,
                 Description = "Test Caregiver",
             });
             Assert.Equal<int>(1, modifiedCount);
@@ -87,7 +87,7 @@ namespace Xcendant.HASL.Services.Tests.CareGivers
                 iEntityFacade.GetDetails(Arg.Any<IHaslContext>(), Arg.Any<string>())
                 .Returns(new CareGiver
                 {
-                    Id = 123456,
+                    RegisteredUserId = 123456,
                     Description = "Test Caregiver",
                 });
 
@@ -100,7 +100,7 @@ namespace Xcendant.HASL.Services.Tests.CareGivers
             var iCurdLogicManager = iContainer.Resolve<ICareGiverManager>();
             var entity = await iCurdLogicManager.FindAsync("professorX@xmen.com");
             Assert.NotNull(entity);
-            Assert.Equal<int>(5, entity.Id);
+            Assert.Equal<int>(5, entity.RegisteredUserId);
         }
     }
 }

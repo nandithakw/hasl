@@ -56,7 +56,7 @@ namespace Xcendant.HASL.Services.Tests.Doctors
             autoFacBuilder.Register(c =>
             {
                 var iEntityFacade = Substitute.For<IDoctorFacade>();
-                iEntityFacade.GetDetails(Arg.Any<IHaslContext>(), Arg.Any<string>()).Returns(new Doctor { Id = 5 });
+                iEntityFacade.GetDetails(Arg.Any<IHaslContext>(), Arg.Any<string>()).Returns(new Doctor { RegisteredUserId = 5 });
                 iEntityFacade.UpdateAsync(Arg.Any<IHaslContext>(), Arg.Any<Doctor>()).Returns(1);
 
                 return iEntityFacade;
@@ -68,7 +68,6 @@ namespace Xcendant.HASL.Services.Tests.Doctors
             var iCurdLogicManager = iContainer.Resolve<IDoctorManager>();
             var modifiedCount = await iCurdLogicManager.RegisterNewOrUpdateDetailsAsync(new Doctor()
             {
-                Id = 5,
                 HospitalId = 456789,
                 RegisteredUserId = 5,
             });
@@ -90,7 +89,6 @@ namespace Xcendant.HASL.Services.Tests.Doctors
                 iEntityFacade.GetDetails(Arg.Any<IHaslContext>(), Arg.Any<string>())
                 .Returns(new Doctor
                 {
-                    Id = 5,
                     HospitalId = 456789,
                     RegisteredUserId = 5,
                 });
@@ -104,7 +102,7 @@ namespace Xcendant.HASL.Services.Tests.Doctors
             var iCurdLogicManager = iContainer.Resolve<IDoctorManager>();
             var entity = await iCurdLogicManager.FindAsync("professorX@xmen.com");
             Assert.NotNull(entity);
-            Assert.Equal<int>(5, entity.Id);
+            Assert.Equal<int>(5, entity.RegisteredUserId);
         }
     }
 }

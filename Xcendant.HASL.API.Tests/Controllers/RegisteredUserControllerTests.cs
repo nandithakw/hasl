@@ -34,7 +34,7 @@ namespace Xcendant.HASL.API.Controllers.Tests
             controller.Request = new HttpRequestMessage();
             controller.Configuration = new HttpConfiguration();
 
-            IHttpActionResult actionResult = await controller.Get("professorX@smen.com");
+            IHttpActionResult actionResult = await controller.GetAsync("professorX@smen.com");
 
             var contentResult = actionResult as OkNegotiatedContentResult<RegisteredUser>;
             Assert.NotNull(contentResult);
@@ -65,7 +65,7 @@ namespace Xcendant.HASL.API.Controllers.Tests
             controller.Request = new HttpRequestMessage();
             controller.Configuration = new HttpConfiguration();
 
-            IHttpActionResult actionResult = await controller.Post(new RegisteredUser());
+            IHttpActionResult actionResult = await controller.PostAsync(new RegisteredUser());
 
             var contentResult = actionResult as OkNegotiatedContentResult<string>;
             Assert.NotNull(contentResult);
@@ -97,7 +97,7 @@ namespace Xcendant.HASL.API.Controllers.Tests
             controller.Request = new HttpRequestMessage();
             controller.Configuration = new HttpConfiguration();
 
-            IHttpActionResult actionResult = await controller.Put(new RegisteredUser());
+            IHttpActionResult actionResult = await controller.PutAsync(new RegisteredUser());
 
             var contentResult = actionResult as OkNegotiatedContentResult<string>;
             Assert.NotNull(contentResult);
