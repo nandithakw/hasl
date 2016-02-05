@@ -65,6 +65,10 @@
     <Compile Include="Migrations\201602041453380_initial.Designer.cs">
       <DependentUpon>201602041453380_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602051117035_secondmingrations.cs" />
+    <Compile Include="Migrations\201602051117035_secondmingrations.Designer.cs">
+      <DependentUpon>201602051117035_secondmingrations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Patients\IPatientFacade.cs" />
     <Compile Include="Patients\PatientFacade.cs" />
@@ -86,6 +90,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602041453380_initial.resx">
       <DependentUpon>201602041453380_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602051117035_secondmingrations.resx">
+      <DependentUpon>201602051117035_secondmingrations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
