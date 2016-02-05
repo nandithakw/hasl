@@ -61,13 +61,9 @@
     <Compile Include="Hospitals\HospitalFacade.cs" />
     <Compile Include="Members\IRegisteredUserFacade.cs" />
     <Compile Include="Members\RegisteredUserFacade.cs" />
-    <Compile Include="Migrations\201601240840457_initial.cs" />
-    <Compile Include="Migrations\201601240840457_initial.Designer.cs">
-      <DependentUpon>201601240840457_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201601240842160_initial2.cs" />
-    <Compile Include="Migrations\201601240842160_initial2.Designer.cs">
-      <DependentUpon>201601240842160_initial2.cs</DependentUpon>
+    <Compile Include="Migrations\201602041453380_initial.cs" />
+    <Compile Include="Migrations\201602041453380_initial.Designer.cs">
+      <DependentUpon>201602041453380_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Patients\IPatientFacade.cs" />
@@ -88,11 +84,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201601240840457_initial.resx">
-      <DependentUpon>201601240840457_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601240842160_initial2.resx">
-      <DependentUpon>201601240842160_initial2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602041453380_initial.resx">
+      <DependentUpon>201602041453380_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

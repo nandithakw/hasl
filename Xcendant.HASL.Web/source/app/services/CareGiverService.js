@@ -5,12 +5,12 @@ app.factory('CareGiverService', ['$http', '$q', 'generalSettings', function ($ht
     var getAll = function () {
         return $q(function (resolve, reject) {
             var caregivers;
-            $http.get(generalSettings.apiServiceBaseUri + "api/caregivers").then(function (response) {
+            $http.get(generalSettings.apiServiceBaseUri + "/api/caregivers").then(function (response) {
                 caregivers = response.data;
                 resolve(caregivers);
             }, function (error) {
 
-                reject(error);
+                reject(error.data);
             });
 
         });

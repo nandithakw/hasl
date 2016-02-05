@@ -1,11 +1,22 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Xcendant.HASL.Entities
 {
     public class Patient
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        [Key, ForeignKey("RegisteredUser")]
+        public int RegisteredUserId { get; set; }
+
+        public string FullName
+        {
+            get { return this.RegisteredUser != null ? this.RegisteredUser.FirstName + this.RegisteredUser.LastName : null; }
+        }
+
+        public string Id
+        {
+            get { return "DOC" + this.RegisteredUserId; }
+        }
         public string RegistrationNumber { get; set; }
 
         public HemophiliaType HemophiliaType { get; set; }
@@ -15,6 +26,7 @@ namespace Xcendant.HASL.Entities
         public int PersonelCareGiverId { get; set; }
         public int ConusltingTreatmentCenterId { get; set; }
 
+        public virtual RegisteredUser RegisteredUser { get; set; }
 
         [ForeignKey("CounsultingDoctorId")]
         public virtual Doctor CounsultingDoctor { get; set; }

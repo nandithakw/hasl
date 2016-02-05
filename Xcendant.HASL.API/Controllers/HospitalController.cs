@@ -16,7 +16,8 @@ namespace Xcendant.HASL.API.Controllers
             IHospitalManager = iHospitalManager;
         }
 
-        [HttpGet]
+
+        [Route("")]
         public async Task<IHttpActionResult> GetAllAsync()
         {
             IHttpActionResult result = null;

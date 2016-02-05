@@ -13,8 +13,7 @@ namespace Xcendant.HASL.API.Controllers
         {
             IDoctorManager = iDoctorManager;
         }
-
-        [HttpGet]
+        [Route("")]
         public async Task<IHttpActionResult> GetAllAsync()
         {
             IHttpActionResult result = null;

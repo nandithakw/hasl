@@ -16,6 +16,7 @@ namespace Xcendant.HASL.Entities
         public string Telephone { get; set; }
         public string Email { get; set; }
         public virtual ICollection<Patient> Patients { get; set; }
+        public virtual ICollection<Doctor> Doctors { get; set; }
 
 
     }

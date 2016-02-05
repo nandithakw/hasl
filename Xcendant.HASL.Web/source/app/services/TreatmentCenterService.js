@@ -5,12 +5,12 @@ app.factory('TreatmentCenterService', ['$http', '$q', 'generalSettings', functio
     var getAll = function () {
         return $q(function (resolve, reject) {
             var centers;
-            $http.get(generalSettings.apiServiceBaseUri + "api/treatmentcenters").then(function (response) {
+            $http.get(generalSettings.apiServiceBaseUri + "/api/treatmentcenters").then(function (response) {
                 centers = response.data;
                 resolve(centers);
             }, function (error) {
 
-                reject(error);
+                reject(error.data);
             });
 
         });

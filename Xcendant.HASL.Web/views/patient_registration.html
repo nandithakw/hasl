@@ -26,10 +26,10 @@
             <div class="clearfix"></div>
 
             <div class="col-lg-12">
-                <div class="form-group">
+                <div class="form-group" ng-hide="isNewPatient">
                     <label class="control-label col-sm-2 text-right" for="patientID">Patient ID:</label>
                     <div class="col-sm-10">
-                        <label class="control-label" for="patientID">PT1000</label>
+                        <label class="control-label" for="patientID">{{patient.Id}}</label>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -93,12 +93,10 @@
                     <label class="control-label col-sm-4" for="typeofHe">Preferred Doctor:</label>
                     <div class="col-sm-8">
                       
-                      <select class="form-control" id="Preferred-doctor">
+                      <select class="form-control" id="Preferred-doctor" ng-options="doctor.fullName for doctor in doctors track by doctor.registeredUserId"
+      ng-model="patient.counsultingDoctorId">
                            <option value="" disabled selected class="hidden">Select the Doctor</option>
-                           <option>Doctor1</option>
-                           <option>Doctor2</option>
-                           <option>Other</option>
-                         
+                                                   
                        </select>
                        
                     </div>
@@ -110,10 +108,10 @@
                     <label class="control-label col-sm-4" for="typeofHe">Hospital:</label>
                     <div class="col-sm-8">
                       
-                      <select class="form-control">
+                      <select class="form-control" ng-options="hospital.name for hospital in hospitals track by hospital.id"
+      ng-model="patient.counsultingHospitalId">
                            <option  value="" disabled selected class="hidden">Select the Hospital</option>
-                           <option>Hospital1</option>
-                           <option>Hospital2</option>
+                          
                          
                        </select>
                        
@@ -129,11 +127,10 @@
                     <label class="control-label col-sm-4" for="severity">Caretacker:</label>
                     <div class="col-sm-8">
                       
-                      <select class="form-control">
-                           <option value="" disabled selected class="hidden">Select the Caretacker</optionvalue="">
-                           <option>Mild</option>
-                           <option>Moderate</option>
-                           <option>Servere</option>
+                      <select class="form-control" ng-options="careGiver.name for careGiver in careGivers track by careGiver.id"
+      ng-model="patient.counsultingcareGiverId">
+                           <option value="" disabled selected class="hidden">Select the Caretacker</option>
+                           
                        </select>
                        
                     </div>
@@ -143,10 +140,10 @@
                     <label class="control-label required-label col-sm-4" for="typeofHe">Treatment Center:<span class='fa fa-asterisk required-star'></span></label>
                     <div class="col-sm-8">
                       
-                      <select class="form-control required-input">
+                      <select class="form-control required-input" ng-options="treatmentCenter.name for treatmentCenter in treatmentCenters track by treatmentCenter.id"
+      ng-model="patient.counsultingTreatmentCenterId">
                            <option value="" disabled selected class="hidden">Select the Treatment center</option>
-                           <option>Treatment center1</option>
-                           <option>Treatment center2</option>
+                           
                          
                        </select>
                        

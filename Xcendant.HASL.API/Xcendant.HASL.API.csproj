@@ -132,6 +132,7 @@
     <Compile Include="Controllers\HospitalController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
     <Compile Include="Controllers\RegisteredUserController.cs" />
+    <Compile Include="Controllers\TreatmentCenterController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

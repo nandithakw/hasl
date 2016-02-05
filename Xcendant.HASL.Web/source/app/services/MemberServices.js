@@ -6,11 +6,11 @@ app.factory('MemberDetailServices', ['$http', '$q', 'generalSettings', function 
     var getUserProfile = function (userName) {
         return $q(function (resolve, reject) {
             var memberProfile;
-            $http.get(generalSettings.apiServiceBaseUri + "/api/registereduser/" + userName + "/").then(function (response) {
+            $http.get(generalSettings.apiServiceBaseUri + "/api/registeredusers/" + userName + "/").then(function (response) {
                 memberProfile = response.data;
                 resolve(memberProfile);
             }, function (error) {
-                reject(error);
+                reject(error.data);
             });
         });
     }
@@ -18,11 +18,11 @@ app.factory('MemberDetailServices', ['$http', '$q', 'generalSettings', function 
     var createUserProfile = function (userDetail) {
         return $q(function (resolve, reject) {
             var message;
-            $http.post(generalSettings.apiServiceBaseUri + "/api/registereduser/" + userDetail.email + "/", userDetail).then(function (response) {
+            $http.post(generalSettings.apiServiceBaseUri + "/api/registeredusers/" + userDetail.email + "/", userDetail).then(function (response) {
                 message = response.data;
                 resolve(message);
             }, function (error) {
-                reject(error);
+                reject(error.data);
             });
         });
     }
@@ -30,11 +30,11 @@ app.factory('MemberDetailServices', ['$http', '$q', 'generalSettings', function 
     var updateUserProfile = function (userDetail) {
         return $q(function (resolve, reject) {
             var message;
-            $http.put(generalSettings.apiServiceBaseUri + "/api/registereduser/" + userDetail.email + "/", userDetail).then(function (response) {
+            $http.put(generalSettings.apiServiceBaseUri + "/api/registeredusers/" + userDetail.email + "/", userDetail).then(function (response) {
                 message = response.data;
                 resolve(message);
             }, function (error) {
-                reject(error);
+                reject(error.data);
             });
         });
     }

@@ -5,7 +5,7 @@ using Xcendant.HASL.Entities;
 using Xcendant.HASL.Services.Members;
 namespace Xcendant.HASL.API.Controllers
 {
-    [RoutePrefix("api/RegisteredUser")]
+    [RoutePrefix("api/RegisteredUsers")]
     public class RegisteredUserController : ApiController
     {
         public IRegisteredUserManager IRegisteredUserManager { get; private set; }

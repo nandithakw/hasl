@@ -6,9 +6,18 @@ namespace Xcendant.HASL.Entities
 {
     public class Doctor
     {
-        public int Id { get; set; }
         [Key, ForeignKey("RegisteredUser")]
         public int RegisteredUserId { get; set; }
+
+        public string FullName
+        {
+            get { return this.RegisteredUser != null ? this.RegisteredUser.FirstName + this.RegisteredUser.LastName : null; }
+        }
+
+        public string Id
+        {
+            get { return "DOC" + this.RegisteredUserId; }
+        }
         [Required]
         public string RegistraionNumber { get; set; }
         public int HospitalId { get; set; }

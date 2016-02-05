@@ -1,6 +1,6 @@
 
 var app = angular.module('hasl',
-    ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'ngMessages', 'ngStorage', 'toastr', 'ngProgress','auth', 'localSingup', 'authSerivces', 'authComplete', 'securedhome', 'MemberServices', 'profile','hasl.patient']);
+    ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'ngMessages', 'ngStorage', 'toastr', 'ngProgress', 'auth', 'localSingup', 'authSerivces', 'authComplete', 'securedhome', 'MemberServices', 'profile', 'hasl.patient', 'hasl.caregiver', 'hasl.treatmentcenter', 'hasl.hospital', 'hasl.doctor']);
 //angular.module('hasl', ['ui.bootstrap']);
 
 

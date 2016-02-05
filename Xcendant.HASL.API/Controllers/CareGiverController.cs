@@ -14,7 +14,7 @@ namespace Xcendant.HASL.API.Controllers
             ICareGiverManager = iCareGiverManager;
         }
 
-        [HttpGet]
+        [Route("")]
         public async Task<IHttpActionResult> GetAllAsync()
         {
             IHttpActionResult result = null;

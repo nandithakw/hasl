@@ -5,7 +5,7 @@ using Xcendant.HASL.Entities;
 
 namespace Xcendant.HASL.DataAccess.Patients
 {
-    class PatientFacade : AbstractGenericFacade<Patient>, IPatientFacade
+    public class PatientFacade : AbstractGenericFacade<Patient>, IPatientFacade
     {
         public override async Task<Patient> GetDetails<U>(IHaslContext iHaslContext, U key)
         {

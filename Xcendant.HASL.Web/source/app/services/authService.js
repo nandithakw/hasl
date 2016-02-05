@@ -10,7 +10,7 @@ app.factory('authSerivce', ['$http', '$q', '$localStorage', 'authSettings', func
                 Array.isArray(externalProviders) || (reject("External providers list is not valid"))
                 resolve(externalProviders);
             }, function (error) {
-                reject(error);
+                reject(error.data);
             });
         });
 
@@ -38,7 +38,7 @@ app.factory('authSerivce', ['$http', '$q', '$localStorage', 'authSettings', func
                 message = response.data;
                 resolve(message);
             }, function (error) {
-                reject(error);
+                reject(error.data);
             });
         });
     };
@@ -50,7 +50,7 @@ app.factory('authSerivce', ['$http', '$q', '$localStorage', 'authSettings', func
                 $localStorage.authorizationData = { token: response.data.access_token, userName: response.data.user_name };
                 resolve("you are successfully logged in.");
             }, function (error) {
-                reject(error);
+                reject(error.data);
 
             });
         });
@@ -68,7 +68,7 @@ app.factory('authSerivce', ['$http', '$q', '$localStorage', 'authSettings', func
                     userinfo = response.data;
                     resolve(userinfo);
                 }, function (error) {
-                    reject(error);
+                    reject(error.data);
                 });
         });
 
@@ -84,7 +84,7 @@ app.factory('authSerivce', ['$http', '$q', '$localStorage', 'authSettings', func
                .then(function (response) {
                    resolve(response.data);
                }, function (error) {
-                   reject(error);
+                   reject(error.data);
                });
             }
 

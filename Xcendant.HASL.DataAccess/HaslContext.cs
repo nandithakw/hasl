@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using Xcendant.HASL.Entities;
 
 namespace Xcendant.HASL.DataAccess
@@ -8,6 +9,12 @@ namespace Xcendant.HASL.DataAccess
         public HaslContext() : base()
         {
             base.Configuration.LazyLoadingEnabled = false;
+
+        }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            base.OnModelCreating(modelBuilder);
         }
         public DbSet<RegisteredUser> RegisteredUsers { get; set; }
         public DbSet<Patient> Patients { get; set; }
@@ -15,7 +22,6 @@ namespace Xcendant.HASL.DataAccess
         public DbSet<CareGiver> CareGivers { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<TreatmentCenter> TreatmentCenters { get; set; }
-        DbSet<Patient> Patients { get; set; }
 
 
 

@@ -5,12 +5,12 @@ app.factory('HospitalService', ['$http', '$q', 'generalSettings', function ($htt
     var getAll = function () {
         return $q(function (resolve, reject) {
             var hospitals;
-            $http.get(generalSettings.apiServiceBaseUri + "api/hospitals").then(function (response) {
+            $http.get(generalSettings.apiServiceBaseUri + "/api/hospitals").then(function (response) {
                 hospitals = response.data;
                 resolve(hospitals);
             }, function (error) {
 
-                reject(error);
+                reject(error.data);
             });
 
         });

@@ -1,9 +1,12 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Threading.Tasks;
+using System.Web.Http;
 using Xcendant.HASL.Entities;
+using Xcendant.HASL.Services.Patients;
 
 namespace Xcendant.HASL.API.Controllers
 {
-    [RoutePrefix("api/patient")]
+    [RoutePrefix("api/patients")]
     public class PatientController : ApiController
     {
         public IPatientManager IPatientManager { get; private set; }
@@ -11,12 +14,12 @@ namespace Xcendant.HASL.API.Controllers
         public PatientController(IPatientManager iPatientManager)
         {
             IPatientManager = iPatientManager;
+
         }
 
         [Route("{userName}")]
         public async Task<IHttpActionResult> GetAsync(string userName)
         {
-
             IHttpActionResult result = null;
             try
             {
@@ -33,6 +36,7 @@ namespace Xcendant.HASL.API.Controllers
         [Route("{email}")]
         public async Task<IHttpActionResult> PostAsync(Patient user)
         {
+
 
             IHttpActionResult result = null;
             try
@@ -69,6 +73,7 @@ namespace Xcendant.HASL.API.Controllers
         {
 
             IHttpActionResult result = null;
+
             try
             {
                 int modifiedCount = await IPatientManager.RegisterNewOrUpdateDetailsAsync(user);

@@ -7,15 +7,11 @@
                
                
                 
-                <div class="social-media-login-section">
+                <div class="social-media-login-section" ng-controller="AuthController as auth">
                     <h5>Sign in Social media</h5>
 
-                    <i class="fa fa-facebook-square fa-2 facebook-blue"></i>
-                    <i class="fa fa-google-plus-square fa-2 google-plus-red"></i>
-                    <i class="fa  fa-twitter-square fa-2 twitter-blue"></i>
-
-
-
+                    <a href ng-click="exteranlSignIn('Facebook')"> <i class="fa fa-facebook-square fa-2 facebook-blue"></i></a>
+                    <a href ng-click="exteranlSignIn('Google')" ng-disabled="isBusy"><i class="fa fa-google-plus-square fa-2 google-plus-red"></i></a>
                 </div> 
           
           <form name="signupform" class="signupform" ng-controller="localSingupCtrl">

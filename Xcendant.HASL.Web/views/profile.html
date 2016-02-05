@@ -20,7 +20,7 @@
         <!-- Blog Post Content Column -->
         <form class="form-horizontal" role="form" id="profile-registration" name="profileRegistration" ng-controller="ProfileController as profile">
 
-            <div class="col-lg-6">
+            <div class="col-lg-6" >
 
 
                 <div class="form-group">
@@ -75,7 +75,29 @@
                             <option  value="" disabled selected class="hidden">Select the District</option>
                             <option value="LK-52">Ampara</option>
                             <option value="LK-71">Anuradhapura</option>
-                            <option value="LK-81">Badulla</option>
+                            <option value="LK-81">Badulla	</option>
+                            <option value="LK-51">Batticaloa</option>
+                            <option value="LK-11">Colombo</option>
+                            <option value="LK-31">Galle</option>
+                            <option value="LK-12">Gampaha</option>
+                            <option value="LK-33">Hambantota</option>
+                            <option value="LK-41">Jaffna</option>
+                            <option value="LK-13">Kalutara</option>
+                            <option value="LK-21">Kandy</option>
+                            <option value="LK-92">Kegalla</option>
+                            <option value="LK-42">Kilinochchi</option>
+                            <option value="LK-61">Kurunegala</option>
+                            <option value="LK-43">Mannar</option>
+                            <option value="LK-22">Matale</option>
+                            <option value="LK-32">Matara</option>
+                            <option value="LK-82">Monaragala</option>
+                            <option value="LK-45">Mullaittivu</option>
+                            <option value="LK-23">Nuwara Eliya</option>
+                            <option value="LK-72">Polonnaruwa</option>
+                            <option value="LK-62">Puttalam</option>
+                            <option value="LK-91">Ratnapura</option>
+                            <option value="LK-53">Trincomalee</option>
+                            <option value="LK-44">Vavuniya</option>
 
                         </select>
                         <div class="help-block  " ng-messages="profileRegistration.city.$error" ng-if="profileRegistration.city.$touched">
@@ -406,7 +428,7 @@
                 <div class="form-group">
                     <label class="control-label required-label col-sm-4" for="emailaddress">Email Address:<span class='fa fa-asterisk required-star'></span></label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control required-input" id="emailaddress" name="emailaddress" placeholder="Enter Email Address" ng-model="registeredUser.email" ng-readonly="!isNewUser" required>
+                        <input type="text" class="form-control required-input" id="emailaddress" name="emailaddress" placeholder="Enter Email Address"  ng-model="registeredUser.email" ng-readonly="true" required>
                         <div class="help-block  " ng-messages="profileRegistration.emailaddress.$error" ng-if="profileRegistration.emailaddress.$touched">
                             <p ng-message="required">Email address is required.</p>
                         </div>
@@ -479,7 +501,7 @@
 
 
 
-            <div class="col-sm-12">
+            <div class="col-sm-12" ng-disabled="isBusy">
 
                 <div class="form-group">
                     <div class="col-sm-12">

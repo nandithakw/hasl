@@ -5,13 +5,13 @@ app.factory('DoctorService', ['$http', '$q', 'generalSettings', function ($http,
     var getAll = function () {
         return $q(function (resolve, reject) {
             var doctors;
-            $http.get(generalSettings.apiServiceBaseUri + "api/doctors").then(function (response) {
+            $http.get(generalSettings.apiServiceBaseUri + "/api/doctors").then(function (response) {
                 doctors = response.data;
                 resolve(doctors);
             }, function (error) {
                 console.error("Error occurred while trying to retrieve doctors");
                 console.error(error);
-                reject(error);
+                reject(error.data);
             });
 
         });

@@ -1,17 +1,17 @@
 ﻿'use strict'
-var app = angular.module("hasl.patient", ['ngProgress', 'toastr']);
+var app = angular.module("hasl.patient", ['ngProgress', 'ngMessages', 'ngProgress', 'toastr', 'hasl.caregiver', 'hasl.treatmentcenter', 'hasl.hospital', 'hasl.doctor']);
 app.factory('PatientService', ['$http', '$q', 'generalSettings', function ($http, $q, generalSettings) {
     var serviceFactory = {};
 
     var getPatient = function (username) {
         return $q(function (resolve, reject) {
             var patient;
-            $http.get(generalSettings.apiServiceBaseUri + "api/patients/" + username).then(function (response) {
+            $http.get(generalSettings.apiServiceBaseUri + "/api/patients/" + username+"/").then(function (response) {
                 patient = response.data;
                 resolve(patient);
             }, function (error) {
 
-                reject(error);
+                reject(error.data);
             });
 
         });
@@ -21,12 +21,12 @@ app.factory('PatientService', ['$http', '$q', 'generalSettings', function ($http
     var createPatient = function (patient) {
         return $q(function (resolve, reject) {
             var result;
-            $http.post(generalSettings.apiServiceBaseUri + "api/patients/", patient).then(function (response) {
+            $http.post(generalSettings.apiServiceBaseUri + "/api/patients/", patient).then(function (response) {
                 result = response.data;
                 resolve(result);
             }, function (error) {
 
-                reject(error);
+                reject(error.data);
             });
 
         });
@@ -37,7 +37,7 @@ app.factory('PatientService', ['$http', '$q', 'generalSettings', function ($http
     var updatePatient = function (patient) {
         return $q(function (resolve, reject) {
             var result;
-            $http.put(generalSettings.apiServiceBaseUri + "api/patients/" + patient.username, patient).then(function (response) {
+            $http.put(generalSettings.apiServiceBaseUri + "api/patients/" + patient.username + "/", patient).then(function (response) {
                 result = response.data;
                 resolve(result);
             }, function (error) {
